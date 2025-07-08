@@ -22,11 +22,13 @@
 
 <section class="faq-expand-section">
   <div class="faq-header">
+    <div class="faq-icon-title" >
     {% if section.settings.icon != blank %}
       <img src="{{ section.settings.icon | img_url: '80x' }}" class="faq-icon" alt="FAQ Icon" />
     {% endif %}
     <h2 class="faq-title">{{ section.settings.title }}</h2>
     <div class="faq-desc">{{ section.settings.description }}</div>
+  </div>
   </div>
   <div class="faq-list" id="faqList-{{ section.id }}">
     {% for block in section.blocks %}
