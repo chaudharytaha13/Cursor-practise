@@ -337,10 +337,20 @@
         "padding-block-start": 48,
         "padding-block-end": 96
       }
+    },
+    "before_after_d6_8qFb7P": {
+      "type": "before-after-d6",
+      "name": "Before and After Slider",
+      "settings": {
+        "heading": "Before and After Comparison",
+        "before_image": "shopify://shop_images/quality_furniture_-_4.webp",
+        "after_image": "shopify://shop_images/image_26_1489x993_crop_center_57ef9e07-d3e3-4c86-b65c-77a7d5858751.webp"
+      }
     }
   },
   "order": [
     "hero_jVaWmY",
-    "product_list_qU3bEB"
+    "product_list_qU3bEB",
+    "before_after_d6_8qFb7P"
   ]
 }
