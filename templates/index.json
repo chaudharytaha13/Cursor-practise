@@ -424,12 +424,28 @@
             "question": "",
             "answer": ""
           }
+        },
+        "faq_4CayKr": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_YtyKne": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
         }
       },
       "block_order": [
         "faq_Vg4GwT",
         "faq_rJULME",
-        "faq_6gJrLi"
+        "faq_6gJrLi",
+        "faq_4CayKr",
+        "faq_YtyKne"
       ],
       "name": "Expandable FAQ",
       "settings": {
