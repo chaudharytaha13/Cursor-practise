@@ -40,7 +40,10 @@
     {% endfor %}
   </div>
   {% if section.blocks.size > 3 %}
-    <button class="faq-show-more" id="faqShowMore-{{ section.id }}">Show More</button>
+    <div class="faq-buttons" id="faqButtons-{{ section.id }}">
+      <button class="faq-show-more" id="faqShowMore-{{ section.id }}">Show More</button>
+      <button class="faq-show-less" id="faqShowLess-{{ section.id }}" style="display:none;">Show Less</button>
+    </div>
   {% endif %}
   <style>
     .faq-expand-section {
@@ -132,9 +135,13 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    .faq-show-more {
+    .faq-buttons {
       margin: 32px auto 0 auto;
-      display: block;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+    .faq-show-more, .faq-show-less {
       padding: 12px 40px;
       font-size: 1.2rem;
       font-weight: 600;
@@ -145,9 +152,12 @@
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
     }
-    .faq-show-more:hover {
+    .faq-show-more:hover, .faq-show-less:hover {
       background: #0d4c3b;
       color: #fff;
+    }
+    .faq-show-less {
+      display: none;
     }
     @media (max-width: 600px) {
       .faq-expand-section {
@@ -173,21 +183,33 @@
       if (!faqList) return;
       var items = faqList.querySelectorAll('.faq-item');
       var showCount = 3;
+      var showMoreBtn = document.getElementById('faqShowMore-' + sectionId);
+      var showLessBtn = document.getElementById('faqShowLess-' + sectionId);
       function updateVisibility() {
         items.forEach(function(item, idx) {
           item.style.display = idx < showCount ? '' : 'none';
         });
-        var showMoreBtn = document.getElementById('faqShowMore-' + sectionId);
         if (showMoreBtn) {
           showMoreBtn.style.display = showCount < items.length ? '' : 'none';
         }
+        if (showLessBtn) {
+          showLessBtn.style.display = showCount > 3 ? '' : 'none';
+        }
       }
       updateVisibility();
-      var showMoreBtn = document.getElementById('faqShowMore-' + sectionId);
       if (showMoreBtn) {
         showMoreBtn.addEventListener('click', function() {
           showCount += 3;
           updateVisibility();
+        });
+      }
+      if (showLessBtn) {
+        showLessBtn.addEventListener('click', function() {
+          showCount = 3;
+          updateVisibility();
+          // Optionally scroll to top of FAQ section
+          var section = document.querySelector('.faq-expand-section');
+          if (section) section.scrollIntoView({behavior: 'smooth', block: 'start'});
         });
       }
       faqList.addEventListener('click', function(e) {
