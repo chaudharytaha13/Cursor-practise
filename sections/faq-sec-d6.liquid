@@ -1,6 +1,203 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Expandable FAQ",
+  "settings": [
+    { "type": "image_picker", "id": "icon", "label": "FAQ Icon/Logo" },
+    { "type": "text", "id": "title", "label": "FAQ Title", "default": "FAQ" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "Below are some answers to common questions." }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "textarea", "id": "answer", "label": "Answer" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Expandable FAQ" } ]
+}
 {% endschema %}
+
+<section class="faq-expand-section">
+  <div class="faq-header">
+    {% if section.settings.icon != blank %}
+      <img src="{{ section.settings.icon | img_url: '80x' }}" class="faq-icon" alt="FAQ Icon" />
+    {% endif %}
+    <h2 class="faq-title">{{ section.settings.title }}</h2>
+    <div class="faq-desc">{{ section.settings.description }}</div>
+  </div>
+  <div class="faq-list" id="faqList-{{ section.id }}">
+    {% for block in section.blocks %}
+      <div class="faq-item" data-index="{{ forloop.index0 }}">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-qnum">{{ forloop.index }} &#8226;</span> {{ block.settings.question }}
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">{{ block.settings.answer }}</div>
+      </div>
+    {% endfor %}
+  </div>
+  {% if section.blocks.size > 3 %}
+    <button class="faq-show-more" id="faqShowMore-{{ section.id }}">Show More</button>
+  {% endif %}
+  <style>
+    .faq-expand-section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 60px 20px 40px 20px;
+      text-align: center;
+    }
+    .faq-header {
+      margin-bottom: 32px;
+    }
+    .faq-icon {
+      height: 40px;
+      margin-bottom: 8px;
+    }
+    .faq-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .faq-desc {
+      color: #666;
+      font-size: 1.1rem;
+      margin-bottom: 0;
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .faq-item {
+      background: #f7f7f7;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      text-align: left;
+      transition: box-shadow 0.2s;
+    }
+    .faq-item.open {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 1.15rem;
+      font-weight: 600;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      color: #222;
+      transition: background 0.2s;
+    }
+    .faq-qnum {
+      color: #e3b04b;
+      font-weight: 700;
+      margin-right: 8px;
+      font-size: 1.1rem;
+    }
+    .faq-toggle {
+      font-size: 1.5rem;
+      color: #e3b04b;
+      margin-left: 16px;
+      transition: transform 0.2s;
+    }
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      display: none;
+      padding: 0 24px 18px 24px;
+      color: #444;
+      font-size: 1rem;
+      line-height: 1.6;
+      background: #f7f7f7;
+    }
+    .faq-item.open .faq-answer {
+      display: block;
+      animation: fadeIn 0.3s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .faq-show-more {
+      margin: 32px auto 0 auto;
+      display: block;
+      padding: 12px 40px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #0d4c3b;
+      background: #fff;
+      border: 2px solid #0d4c3b;
+      border-radius: 32px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .faq-show-more:hover {
+      background: #0d4c3b;
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      .faq-expand-section {
+        padding: 40px 5px 24px 5px;
+      }
+      .faq-title {
+        font-size: 1.4rem;
+      }
+      .faq-question {
+        font-size: 1rem;
+        padding: 16px 12px;
+      }
+      .faq-answer {
+        font-size: 0.97rem;
+        padding: 0 12px 14px 12px;
+      }
+    }
+  </style>
+  <script>
+    (function() {
+      var sectionId = '{{ section.id }}';
+      var faqList = document.getElementById('faqList-' + sectionId);
+      if (!faqList) return;
+      var items = faqList.querySelectorAll('.faq-item');
+      var showCount = 3;
+      function updateVisibility() {
+        items.forEach(function(item, idx) {
+          item.style.display = idx < showCount ? '' : 'none';
+        });
+        var showMoreBtn = document.getElementById('faqShowMore-' + sectionId);
+        if (showMoreBtn) {
+          showMoreBtn.style.display = showCount < items.length ? '' : 'none';
+        }
+      }
+      updateVisibility();
+      var showMoreBtn = document.getElementById('faqShowMore-' + sectionId);
+      if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', function() {
+          showCount += 3;
+          updateVisibility();
+        });
+      }
+      faqList.addEventListener('click', function(e) {
+        var btn = e.target.closest('.faq-question');
+        if (!btn) return;
+        var item = btn.parentElement;
+        var open = item.classList.contains('open');
+        items.forEach(function(i) { i.classList.remove('open'); });
+        if (!open) item.classList.add('open');
+      });
+    })();
+  </script>
+</section> 
