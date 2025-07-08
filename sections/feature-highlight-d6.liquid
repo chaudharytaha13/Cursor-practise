@@ -1,6 +1,247 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Feature Highlight",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "New Daily Intimacy Formula"
+    },
+    {
+      "type": "text",
+      "id": "highlight_word",
+      "label": "Highlighted Word in Heading",
+      "default": "Intimacy"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading/Description",
+      "default": "Scientifically-backed men's flow support that may improve vascularity and bedroom capacities"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Feature Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Feature Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Feature Description",
+          "default": "Feature description goes here."
+        },
+        {
+          "type": "select",
+          "id": "side",
+          "label": "Side",
+          "options": [
+            {"value": "left", "label": "Left"},
+            {"value": "right", "label": "Right"}
+          ],
+          "default": "left"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {"name": "Feature Highlight"}
+  ]
+}
 {% endschema %}
+
+<section class="feature-highlight-section">
+  <div class="feature-highlight-bg"></div>
+  <div class="feature-highlight-content">
+    <h2 class="feature-highlight-heading">
+      {% assign highlight = section.settings.highlight_word %}
+      {{ section.settings.heading | replace: highlight, '<span class="highlight">' | append: highlight | append: '</span>' }}
+    </h2>
+    <div class="feature-highlight-subheading">{{ section.settings.subheading }}</div>
+    <div class="feature-highlight-layout">
+      <div class="feature-col left">
+        {% for block in section.blocks %}
+          {% if block.settings.side == 'left' %}
+            <div class="feature-block">
+              {% if block.settings.icon != blank %}
+                <img src="{{ block.settings.icon | img_url: '64x64' }}" class="feature-icon" alt="" />
+              {% endif %}
+              <div class="feature-title">{{ block.settings.title }}</div>
+              <div class="feature-desc">{{ block.settings.description }}</div>
+              <div class="arrow arrow-right"></div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="feature-center">
+        {% if section.settings.product_image != blank %}
+          <img src="{{ section.settings.product_image | img_url: 'master' }}" class="product-image" alt="Product" />
+        {% endif %}
+      </div>
+      <div class="feature-col right">
+        {% for block in section.blocks %}
+          {% if block.settings.side == 'right' %}
+            <div class="feature-block">
+              {% if block.settings.icon != blank %}
+                <img src="{{ block.settings.icon | img_url: '64x64' }}" class="feature-icon" alt="" />
+              {% endif %}
+              <div class="feature-title">{{ block.settings.title }}</div>
+              <div class="feature-desc">{{ block.settings.description }}</div>
+              <div class="arrow arrow-left"></div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <style>
+    .feature-highlight-section {
+      position: relative;
+      background: #0d4c3b;
+      color: #fff;
+      padding: 60px 0 40px 0;
+      overflow: hidden;
+    }
+    .feature-highlight-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://cdn.shopify.com/s/files/1/0680/4150/7113/files/pattern-bg.png?v=168') repeat;
+      opacity: 0.15;
+      z-index: 0;
+    }
+    .feature-highlight-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .feature-highlight-heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .feature-highlight-heading .highlight {
+      color: #e3b04b;
+    }
+    .feature-highlight-subheading {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      color: #fff;
+      opacity: 0.9;
+    }
+    .feature-highlight-layout {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .feature-col {
+      flex: 1 1 260px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      min-width: 220px;
+      max-width: 340px;
+    }
+    .feature-center {
+      flex: 0 0 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+    }
+    .product-image {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      background: #174c3b;
+    }
+    .feature-block {
+      background: transparent;
+      text-align: left;
+      position: relative;
+      padding: 0 0 0 0;
+    }
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+      filter: brightness(1.2) sepia(1) hue-rotate(-30deg) saturate(2);
+    }
+    .feature-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .feature-desc {
+      font-size: 1rem;
+      color: #e0e0e0;
+      opacity: 0.95;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      width: 80px;
+      height: 24px;
+      background: none;
+      pointer-events: none;
+    }
+    .arrow-right {
+      right: -90px;
+      transform: translateY(-50%);
+      background: none;
+    }
+    .arrow-left {
+      left: -90px;
+      transform: translateY(-50%) scaleX(-1);
+      background: none;
+    }
+    .arrow:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 24px;
+      background: url('data:image/svg+xml;utf8,<svg width="80" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M2 12 Q40 2 78 12 Q40 22 2 12" stroke="%23e3b04b" stroke-width="3" fill="none" marker-end="url(%23arrowhead)"/><defs><marker id="arrowhead" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="%23e3b04b"/></marker></defs></svg>') no-repeat center/contain;
+    }
+    @media (max-width: 900px) {
+      .feature-highlight-layout {
+        flex-direction: column;
+        gap: 24px;
+      }
+      .feature-col, .feature-center {
+        max-width: 100%;
+        min-width: 0;
+        align-items: center;
+      }
+      .arrow-right, .arrow-left {
+        display: none;
+      }
+      .feature-block {
+        text-align: center;
+      }
+    }
+  </style>
+</section> 
