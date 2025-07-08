@@ -428,15 +428,15 @@
         "faq_4CayKr": {
           "type": "faq",
           "settings": {
-            "question": "",
-            "answer": ""
+            "question": "How can I track my order?",
+            "answer": "Once your order has shipped, you will receive an email with a tracking number. You can use this number to track your shipment through the carrier's website."
           }
         },
         "faq_YtyKne": {
           "type": "faq",
           "settings": {
-            "question": "",
-            "answer": ""
+            "question": "Can I return or exchange my items?",
+            "answer": "We accept returns and exchanges within 30 days of purchase, provided the items are unworn, unwashed, and in their original condition. Please refer to our return policy for more detailed instructions."
           }
         }
       },
