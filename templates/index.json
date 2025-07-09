@@ -451,6 +451,7 @@
       "name": "Compare Supplements",
       "settings": {
         "heading": "Why Settle for Generic? Get Supplements That Work.",
+        "left_logo": "shopify://shop_images/Group_7.png",
         "left_title": "NATURAL JACKSON",
         "right_title": "Other Brands"
       }
