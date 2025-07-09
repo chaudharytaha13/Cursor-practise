@@ -56,6 +56,57 @@
         "cta_link": ""
       }
     },
+    "icon_text_marquee_Lk6CGN": {
+      "type": "icon-text-marquee",
+      "blocks": {
+        "item_xa6dE9": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Ellipse_8-3_50x_f912f637-329f-4fe0-bfa7-8d02b9feb546.webp",
+            "text": "Feature text"
+          }
+        },
+        "item_cJtrnr": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Ellipse_8-3_50x_f912f637-329f-4fe0-bfa7-8d02b9feb546.webp",
+            "text": "Feature text"
+          }
+        },
+        "item_TB3MJr": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Ellipse_8-3_50x_f912f637-329f-4fe0-bfa7-8d02b9feb546.webp",
+            "text": "Feature text"
+          }
+        },
+        "item_Jtq8nA": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Ellipse_8-3_50x_f912f637-329f-4fe0-bfa7-8d02b9feb546.webp",
+            "text": "Feature text"
+          }
+        },
+        "item_kjCdwg": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Ellipse_8-3_50x_f912f637-329f-4fe0-bfa7-8d02b9feb546.webp",
+            "text": "Feature text"
+          }
+        }
+      },
+      "block_order": [
+        "item_xa6dE9",
+        "item_cJtrnr",
+        "item_TB3MJr",
+        "item_Jtq8nA",
+        "item_kjCdwg"
+      ],
+      "name": "Icon Text Marquee",
+      "settings": {
+        "bg_color": "#06584d"
+      }
+    },
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
@@ -504,6 +555,7 @@
   },
   "order": [
     "banner_hero_d6_cnjKHp",
+    "icon_text_marquee_Lk6CGN",
     "hero_jVaWmY",
     "product_list_qU3bEB",
     "before_after_d6_8qFb7P",
