@@ -245,6 +245,7 @@
         "ingredient_VW8dcz": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_9012.avif",
             "title": "Horny Goat Weed",
             "desc": "Traditionally used to support healthy libido and promote overall intimate vitality.",
             "bg_color": "#e9e3f7"
@@ -253,6 +254,7 @@
         "ingredient_9qMhHV": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_9012_1.webp",
             "title": "Eriosema Kraussianum",
             "desc": "Commonly used in herbal traditions to promote male vigor and support intimate wellness.",
             "bg_color": "#e6f7d9"
