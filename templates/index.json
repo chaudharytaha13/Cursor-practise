@@ -263,6 +263,7 @@
         "ingredient_Qw8GFh": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Group_7.png",
             "title": "Grapefruit Extract",
             "desc": "Provides antioxidants and nutrients like fiber and potassium to support immune and digestive health.",
             "bg_color": "#fff3d9"
