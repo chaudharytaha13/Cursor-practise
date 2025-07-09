@@ -8,7 +8,7 @@
     <div class="as-seen-on-logos">
       {% for block in section.blocks %}
         {% if block.type == 'logo' %}
-          <span class="as-seen-on-logo">{{ block.settings.logo | image_url: width: 120 }}</span>
+          <img class="as-seen-on-logo" {{ block.settings.logo | image_url: width: 120 }} >
         {% endif %}
       {% endfor %}
     </div>
