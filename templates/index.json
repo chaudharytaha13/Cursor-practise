@@ -9,6 +9,20 @@
  */
 {
   "sections": {
+    "banner_hero_d6_cnjKHp": {
+      "type": "banner-hero-d6",
+      "name": "Hero Banner D6",
+      "settings": {
+        "heading": "Naturally Boost",
+        "highlight": "Male Vitality",
+        "highlight_color": "#e3b04b",
+        "star_rating": "4.8",
+        "review_count": "8,039",
+        "review_label": "Reviews",
+        "cta_text": "Reclaim Your Power",
+        "cta_link": ""
+      }
+    },
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
@@ -456,6 +470,7 @@
     }
   },
   "order": [
+    "banner_hero_d6_cnjKHp",
     "hero_jVaWmY",
     "product_list_qU3bEB",
     "before_after_d6_8qFb7P",
