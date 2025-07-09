@@ -159,6 +159,16 @@
             "name": "Eleri S.",
             "badge": "Verified Buyer"
           }
+        },
+        "testimonial_MHgnJM": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "5",
+            "title": "Better Focus",
+            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
+            "name": "Eleri S.",
+            "badge": "Verified Buyer"
+          }
         }
       },
       "block_order": [
@@ -166,7 +176,8 @@
         "testimonial_87Wzkc",
         "testimonial_Tc9MCx",
         "testimonial_wGQY7q",
-        "testimonial_q6dEf8"
+        "testimonial_q6dEf8",
+        "testimonial_MHgnJM"
       ],
       "name": "Testimonial Slider",
       "settings": {
