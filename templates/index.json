@@ -107,6 +107,39 @@
         "bg_color": "#06584d"
       }
     },
+    "tesimonial_slider_K99DpV": {
+      "type": "tesimonial-slider",
+      "blocks": {
+        "testimonial_zxb6Hx": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Better Focus",
+            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day."
+          }
+        },
+        "testimonial_eAeYN6": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Better Focus",
+            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day."
+          }
+        },
+        "testimonial_wfpkGK": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Better Focus",
+            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day."
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_zxb6Hx",
+        "testimonial_eAeYN6",
+        "testimonial_wfpkGK"
+      ],
+      "name": "Testimonial Slider",
+      "settings": {}
+    },
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
@@ -556,6 +589,7 @@
   "order": [
     "banner_hero_d6_cnjKHp",
     "icon_text_marquee_Lk6CGN",
+    "tesimonial_slider_K99DpV",
     "hero_jVaWmY",
     "product_list_qU3bEB",
     "before_after_d6_8qFb7P",
