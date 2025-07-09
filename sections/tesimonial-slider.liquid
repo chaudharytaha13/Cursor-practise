@@ -201,13 +201,16 @@
       var total = slides.length;
       if (total < 1) return;
       var center = 1;
-      // Clone slides for infinite loop
+      // Store original slide HTML
+      var slideHTML = slides.map(function(slide) { return slide.outerHTML; });
       function renderSlides() {
         track.innerHTML = '';
         var visible = 3;
         for (var i = -1; i <= 1; i++) {
           var idx = (center + i + total) % total;
-          var slide = slides[idx].cloneNode(true);
+          var temp = document.createElement('div');
+          temp.innerHTML = slideHTML[idx];
+          var slide = temp.firstElementChild;
           if (i === 0) slide.classList.add('active');
           track.appendChild(slide);
         }
