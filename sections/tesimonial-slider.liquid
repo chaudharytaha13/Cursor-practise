@@ -1,231 +1,202 @@
+{% comment %}
+  Testimonial Slider Section
+{% endcomment %}
+<section class="testimonial-slider-section">
+  <div class="testimonial-slider">
+    <button class="slider-arrow slider-arrow--prev" aria-label="Previous">&#8592;</button>
+    <div class="testimonial-slider__track">
+      {% assign testimonials = section.blocks %}
+      {% for block in testimonials %}
+        <div class="testimonial-slide" {{ block.shopify_attributes }}>
+          <div class="testimonial-stars">★★★★★</div>
+          <h3 class="testimonial-title">{{ block.settings.title }}</h3>
+          <p class="testimonial-text">{{ block.settings.text }}</p>
+          <div class="testimonial-author">
+            <strong>{{ block.settings.author }}</strong>
+            <span class="verified">✔ Verified Buyer</span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <button class="slider-arrow slider-arrow--next" aria-label="Next">&#8594;</button>
+  </div>
+</section>
+
 {% schema %}
 {
   "name": "Testimonial Slider",
-  "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Join Over 8,000+ Men Unlocking Lasting Confidence" },
-    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "While individual results may vary, many of our customers have experienced positive results every time!" }
-  ],
+  "max_blocks": 10,
   "blocks": [
     {
       "type": "testimonial",
       "name": "Testimonial",
       "settings": [
-        { "type": "text", "id": "stars", "label": "Star Rating (1-5)", "default": "5" },
-        { "type": "text", "id": "title", "label": "Title", "default": "Better Focus" },
-        { "type": "textarea", "id": "text", "label": "Testimonial Text", "default": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day." },
-        { "type": "text", "id": "name", "label": "Name", "default": "Eleri S." },
-        { "type": "text", "id": "badge", "label": "Badge", "default": "Verified Buyer" }
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Better Focus"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Testimonial Text",
+          "default": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Eleri S."
+        }
       ]
     }
   ],
-  "presets": [ { "name": "Testimonial Slider" } ]
+  "presets": [
+    {
+      "name": "Testimonial Slider",
+      "blocks": [
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
 
-<section class="testimonial-slider-section">
-  <div class="testimonial-slider-header">
-    <h2 class="testimonial-slider-heading">{{ section.settings.heading }}</h2>
-    <div class="testimonial-slider-subheading">{{ section.settings.subheading }}</div>
-  </div>
-  <div class="testimonial-slider-wrapper">
-    <button class="testimonial-slider-arrow left" id="testimonialSliderPrev-{{ section.id }}" aria-label="Previous">&#8592;</button>
-    <div class="testimonial-slider-track" id="testimonialSliderTrack-{{ section.id }}">
-      {% for block in section.blocks %}
-        <div class="testimonial-slide">
-          <div class="testimonial-stars">
-            {% assign star_count = block.settings.stars | plus: 0 %}
-            {% for i in (1..5) %}
-              {% if i <= star_count %}
-                <span class="star filled">&#9733;</span>
-              {% else %}
-                <span class="star">&#9733;</span>
-              {% endif %}
-            {% endfor %}
-          </div>
-          <div class="testimonial-title">{{ block.settings.title }}</div>
-          <div class="testimonial-text">{{ block.settings.text }}</div>
-          <div class="testimonial-name">{{ block.settings.name }}</div>
-          <div class="testimonial-badge"><span class="badge-icon">&#10003;</span> {{ block.settings.badge }}</div>
-        </div>
-      {% endfor %}
-    </div>
-    <button class="testimonial-slider-arrow right" id="testimonialSliderNext-{{ section.id }}" aria-label="Next">&#8594;</button>
-  </div>
-  <style>
-    .testimonial-slider-section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 10px 60px 10px;
-      text-align: center;
+<style>
+.testimonial-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 40px 0;
+}
+.testimonial-slider__track {
+  display: flex;
+  transition: transform 0.5s;
+  width: 960px;
+  overflow: hidden;
+}
+.testimonial-slide {
+  min-width: 320px;
+  margin: 0 10px;
+  background: #a3c2be;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  opacity: 0.6;
+  transform: scale(0.9);
+  transition: transform 0.3s, opacity 0.3s;
+  color: #222;
+  z-index: 1;
+}
+.testimonial-slide.active {
+  background: #0a4d4d;
+  color: #fff;
+  opacity: 1;
+  transform: scale(1.05);
+  z-index: 2;
+}
+.slider-arrow {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 3;
+}
+.slider-arrow:focus { outline: 2px solid #0a4d4d; }
+.testimonial-stars {
+  font-size: 1.5rem;
+  color: #ffe599;
+  margin-bottom: 16px;
+}
+.testimonial-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.testimonial-text {
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+.testimonial-author {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.verified {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #e0e0e0;
+}
+@media (max-width: 1000px) {
+  .testimonial-slider__track { width: 100vw; }
+  .testimonial-slide { min-width: 80vw; }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var track = document.querySelector('.testimonial-slider__track');
+  if (!track) return;
+  var slides = Array.prototype.slice.call(track.children);
+  var prevBtn = document.querySelector('.slider-arrow--prev');
+  var nextBtn = document.querySelector('.slider-arrow--next');
+  var current = 1;
+
+  // Clone first and last slides for infinite loop
+  var firstClone = slides[0].cloneNode(true);
+  var lastClone = slides[slides.length - 1].cloneNode(true);
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, slides[0]);
+  var allSlides = Array.prototype.slice.call(track.children);
+
+  function updateSlider() {
+    allSlides.forEach(function(slide) { slide.classList.remove('active'); });
+    allSlides[current].classList.add('active');
+    track.style.transform = 'translateX(-' + (current * 340) + 'px)';
+  }
+
+  function nextSlide() {
+    if (current >= allSlides.length - 1) return;
+    current++;
+    updateSlider();
+    if (current === allSlides.length - 1) {
+      setTimeout(function() {
+        current = 1;
+        updateSlider();
+      }, 500);
     }
-    .testimonial-slider-header {
-      margin-bottom: 18px;
+  }
+
+  function prevSlide() {
+    if (current <= 0) return;
+    current--;
+    updateSlider();
+    if (current === 0) {
+      setTimeout(function() {
+        current = allSlides.length - 2;
+        updateSlider();
+      }, 500);
     }
-    .testimonial-slider-heading {
-      font-size: 2.3rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .testimonial-slider-subheading {
-      color: #4a5a5a;
-      font-size: 1.1rem;
-      margin-bottom: 24px;
-    }
-    .testimonial-slider-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0;
-      position: relative;
-    }
-    .testimonial-slider-arrow {
-      background: #f7f7f7;
-      border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 1.5rem;
-      color: #06584d;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s, color 0.2s;
-      z-index: 2;
-    }
-    .testimonial-slider-arrow:hover {
-      background: #06584d;
-      color: #fff;
-    }
-    .testimonial-slider-track {
-      display: flex;
-      gap: 32px;
-      transition: transform 0.5s cubic-bezier(.77,0,.18,1);
-      width: 100%;
-      max-width: 900px;
-      overflow: hidden;
-      justify-content: center;
-    }
-    .testimonial-slide {
-      background: #b2d0cb;
-      border-radius: 16px;
-      min-width: 270px;
-      max-width: 320px;
-      flex: 0 0 320px;
-      padding: 32px 18px 28px 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      text-align: center;
-      opacity: 0.7;
-      transform: scale(0.92);
-      transition: box-shadow 0.3s, background 0.3s, opacity 0.3s, transform 0.3s;
-      z-index: 1;
-      position: relative;
-      margin: 0 0;
-    }
-    .testimonial-slide.active {
-      background: #06584d;
-      color: #fff;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
-      opacity: 1;
-      transform: scale(1.07);
-      z-index: 2;
-    }
-    .testimonial-stars {
-      margin-bottom: 18px;
-      font-size: 1.5rem;
-      color: #e3b04b;
-    }
-    .testimonial-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .testimonial-text {
-      font-size: 1rem;
-      margin-bottom: 22px;
-      color: inherit;
-    }
-    .testimonial-name {
-      font-weight: 700;
-      font-size: 1.1rem;
-      margin-bottom: 2px;
-    }
-    .testimonial-badge {
-      color: #fff;
-      font-size: 1rem;
-      opacity: 0.85;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-    .testimonial-slide .badge-icon {
-      color: #e3b04b;
-      font-size: 1.1em;
-    }
-    @media (max-width: 900px) {
-      .testimonial-slider-track {
-        gap: 12px;
-        max-width: 98vw;
-      }
-      .testimonial-slide {
-        min-width: 220px;
-        max-width: 260px;
-        flex: 0 0 260px;
-        padding: 22px 8px 18px 8px;
-      }
-    }
-    @media (max-width: 600px) {
-      .testimonial-slider-section {
-        padding: 20px 0 30px 0;
-      }
-      .testimonial-slider-heading {
-        font-size: 1.2rem;
-      }
-      .testimonial-slide {
-        min-width: 90vw;
-        max-width: 95vw;
-        flex: 0 0 95vw;
-        padding: 16px 2vw 14px 2vw;
-      }
-    }
-  </style>
-  <script>
-    (function() {
-      var sectionId = '{{ section.id }}';
-      var track = document.getElementById('testimonialSliderTrack-' + sectionId);
-      var slides = Array.from(track.querySelectorAll('.testimonial-slide'));
-      var prevBtn = document.getElementById('testimonialSliderPrev-' + sectionId);
-      var nextBtn = document.getElementById('testimonialSliderNext-' + sectionId);
-      var total = slides.length;
-      if (total < 1) return;
-      var center = 1;
-      // Store original slide HTML
-      var slideHTML = slides.map(function(slide) { return slide.outerHTML; });
-      function renderSlides() {
-        track.innerHTML = '';
-        var visible = 3;
-        for (var i = -1; i <= 1; i++) {
-          var idx = (center + i + total) % total;
-          var temp = document.createElement('div');
-          temp.innerHTML = slideHTML[idx];
-          var slide = temp.firstElementChild;
-          if (i === 0) slide.classList.add('active');
-          track.appendChild(slide);
-        }
-      }
-      function go(dir) {
-        center = (center + dir + total) % total;
-        renderSlides();
-      }
-      prevBtn.addEventListener('click', function() { go(-1); });
-      nextBtn.addEventListener('click', function() { go(1); });
-      // Init
-      if (total === 1) center = 0;
-      if (total === 2) center = 0;
-      renderSlides();
-      window.addEventListener('resize', renderSlides);
-    })();
-  </script>
-</section> 
+  }
+
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  // Initialize
+  updateSlider();
+});
+</script> 
