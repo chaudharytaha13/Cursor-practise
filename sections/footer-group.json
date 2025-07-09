@@ -11,6 +11,122 @@
   "type": "footer",
   "name": "Footer",
   "sections": {
+    "custom_footer_Uifx96": {
+      "type": "custom-footer",
+      "blocks": {
+        "supplement_RgicfA": {
+          "type": "supplement",
+          "settings": {
+            "label": "ROCKETWOOD",
+            "url": ""
+          }
+        },
+        "supplement_3GGnQe": {
+          "type": "supplement",
+          "settings": {
+            "label": "EVERWOOD",
+            "url": ""
+          }
+        },
+        "supplement_7xJjAk": {
+          "type": "supplement",
+          "settings": {
+            "label": "TOTAL PACKAGE",
+            "url": ""
+          }
+        },
+        "supplement_bxFfFp": {
+          "type": "supplement",
+          "settings": {
+            "label": "VITALITY BUNDLE",
+            "url": ""
+          }
+        },
+        "policy_D9C9Lq": {
+          "type": "policy",
+          "settings": {
+            "label": "PRIVACY POLICY",
+            "url": ""
+          }
+        },
+        "policy_kR7nHJ": {
+          "type": "policy",
+          "settings": {
+            "label": "TERMS OF SERVICE",
+            "url": ""
+          }
+        },
+        "policy_86qaKd": {
+          "type": "policy",
+          "settings": {
+            "label": "SHIPPING POLICY",
+            "url": ""
+          }
+        },
+        "policy_tiiVca": {
+          "type": "policy",
+          "settings": {
+            "label": "REFUND POLICY",
+            "url": ""
+          }
+        },
+        "policy_HRrpGt": {
+          "type": "policy",
+          "settings": {
+            "label": "MEDICAL DISCLAIMER",
+            "url": ""
+          }
+        },
+        "social_gdfe6H": {
+          "type": "social",
+          "settings": {
+            "icon_svg": "<svg width=\"36\" height=\"36\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"18\" cy=\"18\" r=\"18\" fill=\"#D6B36A\"></circle><path d=\"M24 12h-2a2 2 0 0 0-2 2v2h4l-1 4h-3v8h-4v-8h-2v-4h2v-2a4 4 0 0 1 4-4h2v4z\" fill=\"#0A4D4D\"></path></svg>",
+            "url": ""
+          }
+        },
+        "social_txKqLx": {
+          "type": "social",
+          "settings": {
+            "icon_svg": "<svg width=\"36\" height=\"36\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"18\" cy=\"18\" r=\"18\" fill=\"#D6B36A\"></circle><path d=\"M24 12h-2a2 2 0 0 0-2 2v2h4l-1 4h-3v8h-4v-8h-2v-4h2v-2a4 4 0 0 1 4-4h2v4z\" fill=\"#0A4D4D\"></path></svg>",
+            "url": ""
+          }
+        },
+        "social_WPXcy7": {
+          "type": "social",
+          "settings": {
+            "icon_svg": "<svg width=\"36\" height=\"36\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"18\" cy=\"18\" r=\"18\" fill=\"#D6B36A\"></circle><path d=\"M24 12h-2a2 2 0 0 0-2 2v2h4l-1 4h-3v8h-4v-8h-2v-4h2v-2a4 4 0 0 1 4-4h2v4z\" fill=\"#0A4D4D\"></path></svg>",
+            "url": ""
+          }
+        },
+        "social_eyGhqE": {
+          "type": "social",
+          "settings": {
+            "icon_svg": "<svg width=\"36\" height=\"36\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"18\" cy=\"18\" r=\"18\" fill=\"#D6B36A\"></circle><path d=\"M24 12h-2a2 2 0 0 0-2 2v2h4l-1 4h-3v8h-4v-8h-2v-4h2v-2a4 4 0 0 1 4-4h2v4z\" fill=\"#0A4D4D\"></path></svg>",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "supplement_RgicfA",
+        "supplement_3GGnQe",
+        "supplement_7xJjAk",
+        "supplement_bxFfFp",
+        "policy_D9C9Lq",
+        "policy_kR7nHJ",
+        "policy_86qaKd",
+        "policy_tiiVca",
+        "policy_HRrpGt",
+        "social_gdfe6H",
+        "social_txKqLx",
+        "social_WPXcy7",
+        "social_eyGhqE"
+      ],
+      "name": "Custom Footer",
+      "settings": {
+        "brand_name": "Natural Jackson",
+        "disclaimer": "*THESE STATEMENTS HAVE NOT BEEN EVALUATED BY THE FOOD AND DRUG ADMINISTRATION. THESE PRODUCTS ARE NOT INTENDED TO DIAGNOSE, TREAT, CURE, OR PREVENT ANY DISEASE. READ OUR MEDICAL DISCLAIMER."
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -283,6 +399,7 @@
         "group_tbFfTQ",
         "footer_utilities_KRaGcH"
       ],
+      "disabled": true,
       "name": "Footer",
       "settings": {
         "content_direction": "column",
@@ -305,6 +422,7 @@
     }
   },
   "order": [
+    "custom_footer_Uifx96",
     "footer"
   ]
 }
