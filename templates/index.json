@@ -114,31 +114,46 @@
           "type": "testimonial",
           "settings": {
             "title": "Better Focus",
-            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day."
+            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
+            "name": "Caleb L."
           }
         },
         "testimonial_eAeYN6": {
           "type": "testimonial",
           "settings": {
             "title": "Better Focus",
-            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day."
+            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
+            "name": "Caleb L."
           }
         },
         "testimonial_wfpkGK": {
           "type": "testimonial",
           "settings": {
             "title": "Better Focus",
-            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day."
+            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
+            "name": "Caleb L."
+          }
+        },
+        "testimonial_FXeKq4": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Everyday Performance Lift",
+            "text": "I've definitely noticed improved performance and less fatigue. Everwood is now part of my daily routine.",
+            "name": "Caleb L."
           }
         }
       },
       "block_order": [
         "testimonial_zxb6Hx",
         "testimonial_eAeYN6",
-        "testimonial_wfpkGK"
+        "testimonial_wfpkGK",
+        "testimonial_FXeKq4"
       ],
       "name": "Testimonial Slider",
-      "settings": {}
+      "settings": {
+        "heading": "Join Over 8,000+ Men Unlocking Lasting Confidence",
+        "subheading": "While individual results may vary, many of our customers have experienced positive results every time!"
+      }
     },
     "hero_jVaWmY": {
       "type": "hero",
