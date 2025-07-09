@@ -239,6 +239,121 @@
       "name": "As Seen On & Benefits",
       "settings": {}
     },
+    "superior_daily_vitality_8hQtjy": {
+      "type": "superior-daily-vitality",
+      "blocks": {
+        "ingredient_VW8dcz": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Horny Goat Weed",
+            "desc": "Traditionally used to support healthy libido and promote overall intimate vitality.",
+            "bg_color": "#e9e3f7"
+          }
+        },
+        "ingredient_9qMhHV": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Eriosema Kraussianum",
+            "desc": "Commonly used in herbal traditions to promote male vigor and support intimate wellness.",
+            "bg_color": "#e6f7d9"
+          }
+        },
+        "ingredient_Qw8GFh": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Grapefruit Extract",
+            "desc": "Provides antioxidants and nutrients like fiber and potassium to support immune and digestive health.",
+            "bg_color": "#fff3d9"
+          }
+        },
+        "ingredient_6kARDg": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Yohimbine",
+            "desc": "Traditionally used to support circulation and enhance physical performance.",
+            "bg_color": "#ffe7d9"
+          }
+        },
+        "ingredient_6ymVeY": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Cat's Claw Extract",
+            "desc": "Helps support energy levels, circulation, and physical performance, including intimate vitality.",
+            "bg_color": "#ffe7d9"
+          }
+        },
+        "ingredient_NdGbXp": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Ginseng Root",
+            "desc": "Helps support energy levels, circulation, and physical performance, including intimate vitality.",
+            "bg_color": "#e6f7d9"
+          }
+        },
+        "badge_BN8VRx": {
+          "type": "badge",
+          "settings": {
+            "icon_svg": "<svg width=\"24\" height=\"24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"12\" cy=\"12\" r=\"12\" fill=\"none\" stroke=\"#D6B36A\" stroke-width=\"2\"></circle><path d=\"M8 12l2.5 2.5L16 9\" stroke=\"#D6B36A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "label": "HORMONE-FREE"
+          }
+        },
+        "badge_BjwrnA": {
+          "type": "badge",
+          "settings": {
+            "icon_svg": "<svg width=\"24\" height=\"24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"12\" cy=\"12\" r=\"12\" fill=\"none\" stroke=\"#D6B36A\" stroke-width=\"2\"></circle><path d=\"M8 12l2.5 2.5L16 9\" stroke=\"#D6B36A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "label": "cGMP COMPLIANT"
+          }
+        },
+        "badge_gD86kh": {
+          "type": "badge",
+          "settings": {
+            "icon_svg": "<svg width=\"24\" height=\"24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"12\" cy=\"12\" r=\"12\" fill=\"none\" stroke=\"#D6B36A\" stroke-width=\"2\"></circle><path d=\"M8 12l2.5 2.5L16 9\" stroke=\"#D6B36A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "label": "3rd PARTY TESTED"
+          }
+        },
+        "badge_nwtgLA": {
+          "type": "badge",
+          "settings": {
+            "icon_svg": "<svg width=\"24\" height=\"24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"12\" cy=\"12\" r=\"12\" fill=\"none\" stroke=\"#D6B36A\" stroke-width=\"2\"></circle><path d=\"M8 12l2.5 2.5L16 9\" stroke=\"#D6B36A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "label": "VEGAN"
+          }
+        },
+        "badge_YKLEmJ": {
+          "type": "badge",
+          "settings": {
+            "icon_svg": "<svg width=\"24\" height=\"24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"12\" cy=\"12\" r=\"12\" fill=\"none\" stroke=\"#D6B36A\" stroke-width=\"2\"></circle><path d=\"M8 12l2.5 2.5L16 9\" stroke=\"#D6B36A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "label": "NON-GMO"
+          }
+        },
+        "badge_nQxQD8": {
+          "type": "badge",
+          "settings": {
+            "icon_svg": "<svg width=\"24\" height=\"24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"12\" cy=\"12\" r=\"12\" fill=\"none\" stroke=\"#D6B36A\" stroke-width=\"2\"></circle><path d=\"M8 12l2.5 2.5L16 9\" stroke=\"#D6B36A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "label": "MADE IN USA"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_VW8dcz",
+        "ingredient_9qMhHV",
+        "ingredient_Qw8GFh",
+        "ingredient_6kARDg",
+        "ingredient_6ymVeY",
+        "ingredient_NdGbXp",
+        "badge_BN8VRx",
+        "badge_BjwrnA",
+        "badge_gD86kh",
+        "badge_nwtgLA",
+        "badge_YKLEmJ",
+        "badge_nQxQD8"
+      ],
+      "name": "Superior Daily Vitality",
+      "settings": {
+        "left_image_alt": "Everwood Product",
+        "heading": "Superior Daily Vitality",
+        "subheading": "Carefully crafted with Hormone Free, Gluten Free & Soy Free ingredients"
+      }
+    },
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
@@ -288,6 +403,7 @@
         "text_YLPk4p",
         "button_H9gpTf"
       ],
+      "disabled": true,
       "name": "t:names.hero",
       "settings": {
         "link": "",
@@ -548,6 +664,7 @@
           ]
         }
       },
+      "disabled": true,
       "name": "Product list",
       "settings": {
         "collection": "all",
@@ -570,6 +687,7 @@
     },
     "before_after_d6_8qFb7P": {
       "type": "before-after-d6",
+      "disabled": true,
       "name": "Before and After Slider",
       "settings": {
         "heading": "Before and After Comparison",
@@ -690,6 +808,7 @@
     "icon_text_marquee_Lk6CGN",
     "tesimonial_slider_K99DpV",
     "as_so_on_benefits_eefXda",
+    "superior_daily_vitality_8hQtjy",
     "hero_jVaWmY",
     "product_list_qU3bEB",
     "before_after_d6_8qFb7P",
