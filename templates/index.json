@@ -358,6 +358,103 @@
         "subheading": "Carefully crafted with Hormone Free, Gluten Free & Soy Free ingredients"
       }
     },
+    "compare_suppliments_PcmztN": {
+      "type": "compare-suppliments",
+      "blocks": {
+        "intro_pNKXdN": {
+          "type": "intro",
+          "settings": {
+            "icon_svg": "<svg width=\"24\" height=\"24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"12\" cy=\"12\" r=\"12\" fill=\"#0A4D4D\"></circle><path d=\"M8 12l2.5 2.5L16 9\" stroke=\"#D6B36A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "text": "Natural Jackson is built for men who take their health seriously."
+          }
+        },
+        "intro_rWNjM8": {
+          "type": "intro",
+          "settings": {
+            "icon_svg": "<svg width=\"24\" height=\"24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"12\" cy=\"12\" r=\"12\" fill=\"#0A4D4D\"></circle><path d=\"M8 12l2.5 2.5L16 9\" stroke=\"#D6B36A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "text": "Formulas designed for real results, no gimmicks, no fluff."
+          }
+        },
+        "intro_4nwcq9": {
+          "type": "intro",
+          "settings": {
+            "icon_svg": "<svg width=\"24\" height=\"24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"12\" cy=\"12\" r=\"12\" fill=\"#0A4D4D\"></circle><path d=\"M8 12l2.5 2.5L16 9\" stroke=\"#D6B36A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "text": "Everything you need, nothing you don't."
+          }
+        },
+        "row_HWbrib": {
+          "type": "row",
+          "settings": {
+            "left_icon_svg": "<svg width=\"20\" height=\"20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"10\" cy=\"10\" r=\"10\" fill=\"#0A4D4D\"></circle><path d=\"M6 10l2.5 2.5L14 7\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "left_text": "100% Natural Ingredients",
+            "right_icon_svg": "<svg width=\"20\" height=\"20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"10\" cy=\"10\" r=\"10\" fill=\"#E14B4B\"></circle><path d=\"M7 7l6 6M13 7l-6 6\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "right_text": "Synthetic Ingredients"
+          }
+        },
+        "row_jGdbcx": {
+          "type": "row",
+          "settings": {
+            "left_icon_svg": "<svg width=\"20\" height=\"20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"10\" cy=\"10\" r=\"10\" fill=\"#0A4D4D\"></circle><path d=\"M6 10l2.5 2.5L14 7\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "left_text": "No Fillers, Binders, or Artificial Additives",
+            "right_icon_svg": "<svg width=\"20\" height=\"20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"10\" cy=\"10\" r=\"10\" fill=\"#E14B4B\"></circle><path d=\"M7 7l6 6M13 7l-6 6\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "right_text": "Toxic Fillers, Binders, Excipients"
+          }
+        },
+        "row_4TmXTb": {
+          "type": "row",
+          "settings": {
+            "left_icon_svg": "<svg width=\"20\" height=\"20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"10\" cy=\"10\" r=\"10\" fill=\"#0A4D4D\"></circle><path d=\"M6 10l2.5 2.5L14 7\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "left_text": "Unique Formulations",
+            "right_icon_svg": "<svg width=\"20\" height=\"20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"10\" cy=\"10\" r=\"10\" fill=\"#E14B4B\"></circle><path d=\"M7 7l6 6M13 7l-6 6\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "right_text": "Generic formulas"
+          }
+        },
+        "row_3WwjEM": {
+          "type": "row",
+          "settings": {
+            "left_icon_svg": "<svg width=\"20\" height=\"20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"10\" cy=\"10\" r=\"10\" fill=\"#0A4D4D\"></circle><path d=\"M6 10l2.5 2.5L14 7\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "left_text": "3rd PARTY TESTED for Purity & Potency",
+            "right_icon_svg": "<svg width=\"20\" height=\"20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"10\" cy=\"10\" r=\"10\" fill=\"#E14B4B\"></circle><path d=\"M7 7l6 6M13 7l-6 6\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "right_text": "Questionable Purity"
+          }
+        },
+        "row_rnMRL4": {
+          "type": "row",
+          "settings": {
+            "left_icon_svg": "<svg width=\"20\" height=\"20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"10\" cy=\"10\" r=\"10\" fill=\"#0A4D4D\"></circle><path d=\"M6 10l2.5 2.5L14 7\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "left_text": "Vegan, Gluten-Free, Soy-Free",
+            "right_icon_svg": "<svg width=\"20\" height=\"20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"10\" cy=\"10\" r=\"10\" fill=\"#E14B4B\"></circle><path d=\"M7 7l6 6M13 7l-6 6\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "right_text": "May Contain Animal Products, Gluten & Soy"
+          }
+        },
+        "row_WYj3nq": {
+          "type": "row",
+          "settings": {
+            "left_icon_svg": "<svg width=\"20\" height=\"20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"10\" cy=\"10\" r=\"10\" fill=\"#0A4D4D\"></circle><path d=\"M6 10l2.5 2.5L14 7\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "left_text": "Founder-Led With Real Passion & Care",
+            "right_icon_svg": "<svg width=\"20\" height=\"20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"10\" cy=\"10\" r=\"10\" fill=\"#E14B4B\"></circle><path d=\"M7 7l6 6M13 7l-6 6\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "right_text": "Corporation-Run With Little Personal Involvement"
+          }
+        }
+      },
+      "block_order": [
+        "intro_pNKXdN",
+        "intro_rWNjM8",
+        "intro_4nwcq9",
+        "row_HWbrib",
+        "row_jGdbcx",
+        "row_4TmXTb",
+        "row_3WwjEM",
+        "row_rnMRL4",
+        "row_WYj3nq"
+      ],
+      "name": "Compare Supplements",
+      "settings": {
+        "heading": "Why Settle for Generic? Get Supplements That Work.",
+        "left_title": "NATURAL JACKSON",
+        "right_title": "Other Brands"
+      }
+    },
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
@@ -813,6 +910,7 @@
     "tesimonial_slider_K99DpV",
     "as_so_on_benefits_eefXda",
     "superior_daily_vitality_8hQtjy",
+    "compare_suppliments_PcmztN",
     "hero_jVaWmY",
     "product_list_qU3bEB",
     "before_after_d6_8qFb7P",
