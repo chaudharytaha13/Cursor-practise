@@ -29,7 +29,7 @@
           <span class="icon-text-marquee-text">{{ block.settings.text }}</span>
         </div>
       {% endfor %}
-      <!-- {# Duplicate for seamless loop #} -->
+      {# Duplicate for seamless loop #}
       {% for block in section.blocks %}
         <div class="icon-text-marquee-item">
           {% if block.settings.icon != blank %}
@@ -61,6 +61,10 @@
       align-items: center;
       white-space: nowrap;
       animation: marquee-scroll 24s linear infinite;
+    }
+    .icon-text-marquee-inner:hover,
+    .icon-text-marquee-inner.paused {
+      animation-play-state: paused !important;
     }
     .icon-text-marquee-item {
       display: flex;
@@ -109,6 +113,13 @@
       }
       setDuration();
       window.addEventListener('resize', setDuration);
+      // Pause on touch for mobile
+      marquee.addEventListener('touchstart', function() {
+        marquee.classList.add('paused');
+      });
+      marquee.addEventListener('touchend', function() {
+        marquee.classList.remove('paused');
+      });
     })();
   </script>
 </section> 
