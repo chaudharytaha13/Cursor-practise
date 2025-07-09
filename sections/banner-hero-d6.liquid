@@ -1,0 +1,284 @@
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    { "type": "image_picker", "id": "background_image", "label": "Background Image" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Naturally Boost" },
+    { "type": "text", "id": "highlight", "label": "Highlighted Heading Text", "default": "Male Vitality" },
+    { "type": "color", "id": "highlight_color", "label": "Highlight Color", "default": "#e3b04b" },
+    { "type": "text", "id": "star_rating", "label": "Star Rating (e.g. 4.8)", "default": "4.8" },
+    { "type": "text", "id": "review_count", "label": "Review Count", "default": "8,039" },
+    { "type": "text", "id": "review_label", "label": "Review Label", "default": "Reviews" },
+    { "type": "text", "id": "cta_text", "label": "Button Text", "default": "Reclaim Your Power" },
+    { "type": "url", "id": "cta_link", "label": "Button Link" },
+    { "type": "image_picker", "id": "product_image", "label": "Product Image" },
+    { "type": "image_picker", "id": "decorative_image", "label": "Decorative Image (e.g. leaf)" },
+    { "type": "image_picker", "id": "right_bg_image", "label": "Right Background Image (e.g. marble)" }
+  ],
+  "blocks": [
+    {
+      "type": "avatar",
+      "name": "Avatar",
+      "settings": [
+        { "type": "image_picker", "id": "avatar_image", "label": "Avatar Image" }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [ { "name": "Hero Banner" } ]
+}
+{% endschema %}
+
+<section class="banner-hero-section" style="{% if section.settings.background_image != blank %}background-image:url('{{ section.settings.background_image | img_url: 'master' }}');{% else %}background:#0d4c3b;{% endif %}">
+  <div class="banner-hero-inner">
+    <div class="banner-hero-left">
+      <h1 class="banner-hero-heading">
+        {{ section.settings.heading }}<br>
+        <span class="highlight" style="color: {{ section.settings.highlight_color }}">{{ section.settings.highlight }}</span>
+      </h1>
+      <div class="banner-hero-rating-row">
+        <div class="banner-hero-avatars">
+          {% for block in section.blocks %}
+            {% if block.settings.avatar_image != blank %}
+              <img src="{{ block.settings.avatar_image | img_url: '48x48' }}" class="banner-hero-avatar" alt="Avatar {{ forloop.index }}" />
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="banner-hero-stars">
+          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#189;</span>
+        </div>
+        <span class="banner-hero-rating-value">{{ section.settings.star_rating }}</span>
+        <span class="banner-hero-review-count">| {{ section.settings.review_count }} <span class="banner-hero-review-label">{{ section.settings.review_label }}</span></span>
+        <span class="banner-hero-check">&#10003;</span>
+      </div>
+      <a href="{{ section.settings.cta_link }}" class="banner-hero-cta">
+        {{ section.settings.cta_text }} <span class="arrow">&#8594;</span>
+      </a>
+    </div>
+    <div class="banner-hero-right">
+      <div class="banner-hero-product-wrap">
+        {% if section.settings.product_image != blank %}
+          <img src="{{ section.settings.product_image | img_url: 'master' }}" class="banner-hero-product" alt="Product" />
+        {% endif %}
+        {% if section.settings.decorative_image != blank %}
+          <img src="{{ section.settings.decorative_image | img_url: 'master' }}" class="banner-hero-decorative" alt="Decorative" />
+        {% endif %}
+      </div>
+      {% if section.settings.right_bg_image != blank %}
+        <img src="{{ section.settings.right_bg_image | img_url: 'master' }}" class="banner-hero-right-bg" alt="Background" />
+      {% endif %}
+    </div>
+  </div>
+  <style>
+    .banner-hero-section {
+      min-height: 480px;
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+    }
+    .banner-hero-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 40px 40px 40px;
+      min-height: 480px;
+      position: relative;
+      z-index: 1;
+    }
+    .banner-hero-left {
+      flex: 1 1 50%;
+      max-width: 520px;
+      z-index: 2;
+    }
+    .banner-hero-heading {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+    .banner-hero-heading .highlight {
+      font-weight: 700;
+      font-size: 2.8rem;
+      display: inline-block;
+      background: linear-gradient(90deg, #e3b04b 0%, #bfa14a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+    .banner-hero-rating-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .banner-hero-avatars {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+    .banner-hero-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      margin-left: -10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      background: #fff;
+      object-fit: cover;
+    }
+    .banner-hero-avatar:first-child {
+      margin-left: 0;
+    }
+    .banner-hero-stars {
+      color: #e3b04b;
+      font-size: 1.3rem;
+      margin-right: 4px;
+      letter-spacing: 1px;
+    }
+    .banner-hero-rating-value {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-right: 8px;
+    }
+    .banner-hero-review-count {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-right: 4px;
+    }
+    .banner-hero-review-label {
+      color: #fff;
+      font-weight: 700;
+    }
+    .banner-hero-check {
+      color: #e3b04b;
+      font-size: 1.2rem;
+      margin-left: 4px;
+    }
+    .banner-hero-cta {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 16px 40px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0d4c3b;
+      background: linear-gradient(90deg, #e3b04b 0%, #bfa14a 100%);
+      border: none;
+      border-radius: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .banner-hero-cta .arrow {
+      margin-left: 10px;
+      font-size: 1.2em;
+      vertical-align: middle;
+    }
+    .banner-hero-cta:hover {
+      background: #0d4c3b;
+      color: #fff;
+    }
+    .banner-hero-right {
+      flex: 1 1 50%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      position: relative;
+      min-width: 320px;
+      min-height: 320px;
+      z-index: 1;
+    }
+    .banner-hero-product-wrap {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .banner-hero-product {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      background: #174c3b;
+      margin-bottom: 0;
+      z-index: 2;
+    }
+    .banner-hero-decorative {
+      position: absolute;
+      left: -60px;
+      bottom: -30px;
+      width: 120px;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .banner-hero-right-bg {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 320px;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      pointer-events: none;
+    }
+    @media (max-width: 900px) {
+      .banner-hero-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 10px 30px 10px;
+        min-height: 0;
+      }
+      .banner-hero-left, .banner-hero-right {
+        max-width: 100%;
+        width: 100%;
+      }
+      .banner-hero-right {
+        justify-content: center;
+        align-items: center;
+        min-width: 0;
+        min-height: 0;
+        margin-top: 32px;
+      }
+      .banner-hero-product {
+        max-width: 240px;
+      }
+      .banner-hero-decorative {
+        left: -30px;
+        width: 80px;
+      }
+      .banner-hero-right-bg {
+        width: 180px;
+      }
+    }
+    @media (max-width: 600px) {
+      .banner-hero-inner {
+        padding: 24px 0 16px 0;
+      }
+      .banner-hero-heading {
+        font-size: 1.5rem;
+      }
+      .banner-hero-heading .highlight {
+        font-size: 1.5rem;
+      }
+      .banner-hero-product {
+        max-width: 140px;
+      }
+      .banner-hero-decorative {
+        left: -10px;
+        width: 40px;
+      }
+      .banner-hero-right-bg {
+        width: 80px;
+      }
+    }
+  </style>
+</section> 
