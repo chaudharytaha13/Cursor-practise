@@ -1,6 +1,274 @@
+{% comment %}
+  Compare Supplements Section
+{% endcomment %}
+<section class="compare-supplements-section">
+  <div class="compare-supplements-container">
+    <h2 class="compare-supplements-heading">{{ section.settings.heading }}</h2>
+    <div class="compare-supplements-intro">
+      {% for block in section.blocks %}
+        {% if block.type == 'intro' %}
+          <div class="compare-intro-bullet">
+            <span class="compare-intro-icon">{{ block.settings.icon_svg }}</span>
+            <span class="compare-intro-text">{{ block.settings.text }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="compare-table-wrapper">
+      <div class="compare-table">
+        <div class="compare-table-row compare-table-header">
+          <div class="compare-table-cell compare-table-cell--left compare-table-header-left">
+            {% if section.settings.left_logo != blank %}
+              <img src="{{ section.settings.left_logo | image_url: width: 120 }}" alt="Natural Jackson logo" class="compare-brand-logo">
+            {% endif %}
+            <span class="compare-brand-title">{{ section.settings.left_title }}</span>
+          </div>
+          <div class="compare-table-cell compare-table-cell--right compare-table-header-right">
+            <span class="compare-brand-title">{{ section.settings.right_title }}</span>
+          </div>
+        </div>
+        {% for block in section.blocks %}
+          {% if block.type == 'row' %}
+            <div class="compare-table-row">
+              <div class="compare-table-cell compare-table-cell--left">
+                <span class="compare-row-icon">{{ block.settings.left_icon_svg }}</span>
+                <span class="compare-row-text">{{ block.settings.left_text }}</span>
+              </div>
+              <div class="compare-table-cell compare-table-cell--right">
+                <span class="compare-row-icon">{{ block.settings.right_icon_svg }}</span>
+                <span class="compare-row-text">{{ block.settings.right_text }}</span>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Compare Supplements",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why Settle for Generic? Get Supplements That Work."
+    },
+    {
+      "type": "image_picker",
+      "id": "left_logo",
+      "label": "Left Brand Logo"
+    },
+    {
+      "type": "text",
+      "id": "left_title",
+      "label": "Left Brand Title",
+      "default": "NATURAL JACKSON"
+    },
+    {
+      "type": "text",
+      "id": "right_title",
+      "label": "Right Brand Title",
+      "default": "Other Brands"
+    }
+  ],
+  "max_blocks": 16,
+  "blocks": [
+    {
+      "type": "intro",
+      "name": "Intro Bullet",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "icon_svg",
+          "label": "SVG Icon (inline SVG markup)",
+          "default": "<svg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='12' cy='12' r='12' fill='#0A4D4D'/><path d='M8 12l2.5 2.5L16 9' stroke='#D6B36A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Natural Jackson is built for men who take their health seriously."
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "name": "Comparison Row",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "left_icon_svg",
+          "label": "Left Icon SVG",
+          "default": "<svg width='20' height='20' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='10' cy='10' r='10' fill='#0A4D4D'/><path d='M6 10l2.5 2.5L14 7' stroke='#fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>"
+        },
+        {
+          "type": "text",
+          "id": "left_text",
+          "label": "Left Text",
+          "default": "100% Natural Ingredients"
+        },
+        {
+          "type": "textarea",
+          "id": "right_icon_svg",
+          "label": "Right Icon SVG",
+          "default": "<svg width='20' height='20' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='10' cy='10' r='10' fill='#E14B4B'/><path d='M7 7l6 6M13 7l-6 6' stroke='#fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>"
+        },
+        {
+          "type": "text",
+          "id": "right_text",
+          "label": "Right Text",
+          "default": "Synthetic Ingredients"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Compare Supplements",
+      "blocks": [
+        { "type": "intro", "settings": { "text": "Natural Jackson is built for men who take their health seriously." } },
+        { "type": "intro", "settings": { "text": "Formulas designed for real results, no gimmicks, no fluff." } },
+        { "type": "intro", "settings": { "text": "Everything you need, nothing you don't." } },
+        { "type": "row", "settings": { "left_text": "100% Natural Ingredients", "right_text": "Synthetic Ingredients" } },
+        { "type": "row", "settings": { "left_text": "No Fillers, Binders, or Artificial Additives", "right_text": "Toxic Fillers, Binders, Excipients" } },
+        { "type": "row", "settings": { "left_text": "Unique Formulations", "right_text": "Generic formulas" } },
+        { "type": "row", "settings": { "left_text": "3rd PARTY TESTED for Purity & Potency", "right_text": "Questionable Purity" } },
+        { "type": "row", "settings": { "left_text": "Vegan, Gluten-Free, Soy-Free", "right_text": "May Contain Animal Products, Gluten & Soy" } },
+        { "type": "row", "settings": { "left_text": "Founder-Led With Real Passion & Care", "right_text": "Corporation-Run With Little Personal Involvement" } }
+      ]
+    }
+  ]
+}
 {% endschema %}
+
+<style>
+.compare-supplements-section {
+  background: #f7f7f7 url('https://cdn.shopify.com/s/files/1/0680/4150/7113/files/compare-bg.svg?v=168') repeat;
+  padding: 40px 0 40px 0;
+  font-family: inherit;
+}
+.compare-supplements-container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.compare-supplements-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 18px;
+  color: #222;
+}
+.compare-supplements-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.compare-intro-bullet {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.08rem;
+  color: #0a4d4d;
+  font-weight: 500;
+}
+.compare-intro-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.compare-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+.compare-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.compare-table-row {
+  display: flex;
+  width: 100%;
+}
+.compare-table-header {
+  margin-bottom: 8px;
+}
+.compare-table-header-left {
+  background: #0a4d4d;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.25rem;
+  border-radius: 16px 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 24px;
+}
+.compare-table-header-right {
+  background: #fff;
+  color: #222;
+  font-weight: 700;
+  font-size: 1.25rem;
+  border-radius: 0 16px 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 24px;
+  border: 1.5px solid #e0e0e0;
+  border-left: none;
+}
+.compare-brand-logo {
+  height: 32px;
+  width: auto;
+  margin-right: 8px;
+}
+.compare-brand-title {
+  font-weight: 700;
+  font-size: 1.18rem;
+  letter-spacing: 0.01em;
+}
+.compare-table-cell {
+  flex: 1 1 0;
+  background: #fff;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  border-bottom: 1.5px solid #e0e0e0;
+}
+.compare-table-cell--left {
+  border-right: 1.5px solid #e0e0e0;
+}
+.compare-table-cell--right {
+}
+.compare-row-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.compare-row-text {
+  color: #222;
+}
+@media (max-width: 700px) {
+  .compare-table-header-left, .compare-table-header-right {
+    font-size: 1rem;
+    padding: 12px 8px;
+  }
+  .compare-table-cell {
+    font-size: 0.98rem;
+    padding: 12px 8px;
+  }
+}
+</style> 
