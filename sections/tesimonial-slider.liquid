@@ -1,31 +1,217 @@
-{% comment %}
-  Testimonial Slider Section
-{% endcomment %}
 <section class="testimonial-slider-section">
-  <div class="testimonial-slider">
-    <button class="slider-arrow slider-arrow--prev" aria-label="Previous">&#8592;</button>
-    <div class="testimonial-slider__track">
-      {% assign testimonials = section.blocks %}
-      {% for block in testimonials %}
-        <div class="testimonial-slide" {{ block.shopify_attributes }}>
-          <div class="testimonial-stars">★★★★★</div>
-          <h3 class="testimonial-title">{{ block.settings.title }}</h3>
+  <div class="testimonial-slider-header">
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.subheading }}</p>
+  </div>
+  <div class="testimonial-slider-wrapper">
+    <button class="testimonial-slider-arrow left" aria-label="Previous">&#8592;</button>
+    <div class="testimonial-slider-track">
+      {% for block in section.blocks %}
+        <div class="testimonial-slide{% if forloop.index == 2 %} active{% endif %}" data-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+          <div class="testimonial-stars">
+            {% for i in (1..5) %}
+              <span class="star">&#9733;</span>
+            {% endfor %}
+          </div>
+          <h3>{{ block.settings.title }}</h3>
           <p class="testimonial-text">{{ block.settings.text }}</p>
-          <div class="testimonial-author">
-            <strong>{{ block.settings.author }}</strong>
-            <span class="verified">✔ Verified Buyer</span>
+          <div class="testimonial-name">{{ block.settings.name }}</div>
+          <div class="testimonial-verified">
+            <span class="verified-icon">&#10003;</span> Verified Buyer
           </div>
         </div>
       {% endfor %}
     </div>
-    <button class="slider-arrow slider-arrow--next" aria-label="Next">&#8594;</button>
+    <button class="testimonial-slider-arrow right" aria-label="Next">&#8594;</button>
   </div>
 </section>
+
+<style>
+.testimonial-slider-section {
+  text-align: center;
+  padding: 40px 0;
+  background: #fff;
+}
+.testimonial-slider-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.testimonial-slider-header p {
+  color: #5a6a6a;
+  margin-bottom: 2rem;
+}
+.testimonial-slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.testimonial-slider-arrow {
+  background: #f2f6f5;
+  border: none;
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background 0.2s;
+}
+.testimonial-slider-arrow:hover {
+  background: #e0eae7;
+}
+.testimonial-slider-track {
+  display: flex;
+  gap: 24px;
+  overflow: hidden;
+  width: 900px;
+  transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+  will-change: transform;
+}
+.testimonial-slide {
+  background: #a7c3be;
+  border-radius: 16px;
+  min-width: 280px;
+  max-width: 300px;
+  flex: 0 0 300px;
+  padding: 32px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: transform 0.4s cubic-bezier(.77,0,.18,1), background 0.3s;
+  color: #fff;
+  opacity: 0.7;
+  scale: 0.92;
+  z-index: 1;
+}
+.testimonial-slide.active {
+  background: #0a4d4d;
+  color: #fff;
+  transform: scale(1.08);
+  opacity: 1;
+  z-index: 2;
+}
+.testimonial-stars {
+  margin-bottom: 16px;
+}
+.star {
+  color: #ffe7b2;
+  font-size: 1.5rem;
+  margin: 0 2px;
+}
+.testimonial-text {
+  font-size: 1rem;
+  margin: 16px 0 24px 0;
+  color: #e6f2f0;
+}
+.testimonial-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+.testimonial-verified {
+  color: #e6f2f0;
+  font-size: 0.95rem;
+}
+.verified-icon {
+  color: #ffe7b2;
+  margin-right: 4px;
+}
+@media (max-width: 1000px) {
+  .testimonial-slider-track { width: 100vw; }
+  .testimonial-slide { min-width: 80vw; max-width: 90vw; }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.querySelector('.testimonial-slider-track');
+  let slides = Array.from(track.children);
+  const prevBtn = document.querySelector('.testimonial-slider-arrow.left');
+  const nextBtn = document.querySelector('.testimonial-slider-arrow.right');
+  let slideWidth = slides[0].offsetWidth + 24; // 24px gap
+  let visible = 3;
+  let current = 1; // center slide index
+  let animating = false;
+
+  // Helper to update .active class
+  function updateActive() {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === current);
+    });
+  }
+
+  // Move to a given index, duplicating/removing slides as needed
+  function moveTo(idx, direction) {
+    if (animating) return;
+    animating = true;
+    track.style.transition = 'transform 0.5s cubic-bezier(.77,0,.18,1)';
+    track.style.transform = `translateX(${-slideWidth * idx}px)`;
+
+    setTimeout(() => {
+      if (direction === 'next') {
+        // Remove first slide, append its clone to end
+        const first = track.children[0];
+        const clone = first.cloneNode(true);
+        track.appendChild(clone);
+        track.removeChild(first);
+      } else if (direction === 'prev') {
+        // Remove last slide, prepend its clone to start
+        const last = track.children[track.children.length - 1];
+        const clone = last.cloneNode(true);
+        track.insertBefore(clone, track.children[0]);
+        track.removeChild(last);
+      }
+      // Reset slides and position
+      slides = Array.from(track.children);
+      track.style.transition = 'none';
+      track.style.transform = `translateX(${-slideWidth * current}px)`;
+      updateActive();
+      animating = false;
+    }, 500);
+  }
+
+  // Initial position
+  track.style.transform = `translateX(${-slideWidth * current}px)`;
+  updateActive();
+
+  prevBtn.addEventListener('click', () => {
+    if (animating) return;
+    current--;
+    if (current < 1) current = 1;
+    moveTo(current, 'prev');
+  });
+  nextBtn.addEventListener('click', () => {
+    if (animating) return;
+    current++;
+    if (current > slides.length - 2) current = slides.length - 2;
+    moveTo(current, 'next');
+  });
+
+  // Responsive: recalc slide width
+  window.addEventListener('resize', () => {
+    slideWidth = slides[0].offsetWidth + 24;
+    track.style.transform = `translateX(${-slideWidth * current}px)`;
+  });
+});
+</script>
 
 {% schema %}
 {
   "name": "Testimonial Slider",
-  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Join Over 8,000+ Men Unlocking Lasting Confidence"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "While individual results may vary, many of our customers have experienced positive results every time!"
+    }
+  ],
   "blocks": [
     {
       "type": "testimonial",
@@ -35,161 +221,34 @@
           "type": "text",
           "id": "title",
           "label": "Title",
-          "default": "Better Focus"
+          "default": "Everyday Performance Lift"
         },
         {
           "type": "textarea",
           "id": "text",
           "label": "Testimonial Text",
-          "default": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day."
+          "default": "I've definitely noticed improved performance and less fatigue. Everwood is now part of my daily routine."
         },
         {
           "type": "text",
-          "id": "author",
-          "label": "Author",
-          "default": "Eleri S."
+          "id": "name",
+          "label": "Customer Name",
+          "default": "Caleb L."
         }
       ]
     }
   ],
+  "max_blocks": 12,
   "presets": [
     {
       "name": "Testimonial Slider",
+      "category": "Testimonials",
       "blocks": [
-        {
-          "type": "testimonial"
-        },
-        {
-          "type": "testimonial"
-        },
-        {
-          "type": "testimonial"
-        }
+        { "type": "testimonial" },
+        { "type": "testimonial" },
+        { "type": "testimonial" }
       ]
     }
   ]
 }
-{% endschema %}
-
-<style>
-.testimonial-slider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin: 40px 0;
-}
-.testimonial-slider__track {
-  display: flex;
-  transition: transform 0.5s;
-  width: 960px;
-  overflow: hidden;
-}
-.testimonial-slide {
-  min-width: 320px;
-  margin: 0 10px;
-  background: #a3c2be;
-  border-radius: 16px;
-  padding: 32px 24px;
-  text-align: center;
-  opacity: 0.6;
-  transform: scale(0.9);
-  transition: transform 0.3s, opacity 0.3s;
-  color: #222;
-  z-index: 1;
-  display: none;
-}
-.testimonial-slide.active {
-  background: #0a4d4d;
-  color: #fff;
-  opacity: 1;
-  transform: scale(1.05);
-  z-index: 2;
-}
-.testimonial-slide.visible {
-  display: block;
-}
-.slider-arrow {
-  background: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 3;
-}
-.slider-arrow:focus { outline: 2px solid #0a4d4d; }
-.testimonial-stars {
-  font-size: 1.5rem;
-  color: #ffe599;
-  margin-bottom: 16px;
-}
-.testimonial-title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-bottom: 12px;
-}
-.testimonial-text {
-  font-size: 1rem;
-  margin-bottom: 18px;
-}
-.testimonial-author {
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-.verified {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: normal;
-  color: #e0e0e0;
-}
-@media (max-width: 1000px) {
-  .testimonial-slider__track { width: 100vw; }
-  .testimonial-slide { min-width: 80vw; }
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const track = document.querySelector('.testimonial-slider__track');
-  if (!track) return;
-  const slides = Array.from(track.children);
-  const prevBtn = document.querySelector('.slider-arrow--prev');
-  const nextBtn = document.querySelector('.slider-arrow--next');
-  let current = 0; // Center slide index
-
-  function updateSlider() {
-    slides.forEach((slide, idx) => {
-      slide.classList.remove('active', 'visible');
-      if (
-        idx === current ||
-        idx === (current - 1 + slides.length) % slides.length ||
-        idx === (current + 1) % slides.length
-      ) {
-        slide.classList.add('visible');
-      }
-      if (idx === current) {
-        slide.classList.add('active');
-      }
-    });
-  }
-
-  function nextSlide() {
-    current = (current + 1) % slides.length;
-    updateSlider();
-  }
-
-  function prevSlide() {
-    current = (current - 1 + slides.length) % slides.length;
-    updateSlider();
-  }
-
-  nextBtn.addEventListener('click', nextSlide);
-  prevBtn.addEventListener('click', prevSlide);
-
-  // Initialize
-  updateSlider();
-});
-</script> 
+{% endschema %} 
