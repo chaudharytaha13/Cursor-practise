@@ -109,6 +109,43 @@
     },
     "tesimonial_slider_fqyQXH": {
       "type": "tesimonial-slider",
+      "blocks": {
+        "testimonial_3zNEEg": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "5",
+            "title": "Better Focus",
+            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
+            "name": "Eleri S.",
+            "badge": "Verified Buyer"
+          }
+        },
+        "testimonial_87Wzkc": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "5",
+            "title": "Better Focus",
+            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
+            "name": "Eleri S.",
+            "badge": "Verified Buyer"
+          }
+        },
+        "testimonial_Tc9MCx": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "5",
+            "title": "Better Focus",
+            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
+            "name": "Eleri S.",
+            "badge": "Verified Buyer"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_3zNEEg",
+        "testimonial_87Wzkc",
+        "testimonial_Tc9MCx"
+      ],
       "name": "Testimonial Slider",
       "settings": {
         "heading": "Join Over 8,000+ Men Unlocking Lasting Confidence",
