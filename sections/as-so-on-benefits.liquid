@@ -1,6 +1,188 @@
+{% comment %}
+  As Seen On & Benefits Section
+{% endcomment %}
+<section class="as-seen-on-benefits-section">
+  <div class="as-seen-on-bar">
+    <span class="as-seen-on-label">AS SEEN ON</span>
+    <span class="as-seen-on-divider"></span>
+    <div class="as-seen-on-logos">
+      {% for block in section.blocks %}
+        {% if block.type == 'logo' %}
+          <span class="as-seen-on-logo">{{ block.settings.logo | image_url: width: 120 | image_tag: alt: block.settings.alt }}</span>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="benefits-bar">
+    {% for block in section.blocks %}
+      {% if block.type == 'benefit' %}
+        <div class="benefit-item">
+          <span class="benefit-icon">{{ block.settings.icon_svg }}</span>
+          <div class="benefit-title">{{ block.settings.title }}</div>
+          <div class="benefit-desc">{{ block.settings.desc }}</div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "As Seen On & Benefits",
+  "max_blocks": 10,
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt text",
+          "default": "Media logo"
+        }
+      ]
+    },
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "icon_svg",
+          "label": "SVG Icon (inline SVG markup)",
+          "default": "<svg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='28' cy='28' r='28' fill='#D6B36A'/><path d='M36 22C36 22 33.5 16 28 16C22.5 16 20 22 20 22C20 22 20 34 28 34C36 34 36 22 36 22Z' stroke='#0A4D4D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "NATURAL & SAFE"
+        },
+        {
+          "type": "text",
+          "id": "desc",
+          "label": "Description",
+          "default": "Carefully crafted with 100% natural botanicals"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "As Seen On & Benefits",
+      "blocks": [
+        { "type": "logo", "settings": { "alt": "Business Insider" } },
+        { "type": "logo", "settings": { "alt": "Fox" } },
+        { "type": "logo", "settings": { "alt": "NBC News" } },
+        { "type": "logo", "settings": { "alt": "CBS" } },
+        { "type": "logo", "settings": { "alt": "StreetInsider.com" } },
+        { "type": "logo", "settings": { "alt": "Newsmax" } },
+        { "type": "benefit", "settings": { "title": "NATURAL & SAFE", "desc": "Carefully crafted with 100% natural botanicals" } },
+        { "type": "benefit", "settings": { "title": "MADE IN USA", "desc": "Products made in USA in cGMP Compliant Facilities", "icon_svg": "<svg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='28' cy='28' r='28' fill='#D6B36A'/><g><rect x='18' y='26' width='20' height='4' fill='#0A4D4D'/><rect x='18' y='32' width='20' height='4' fill='#0A4D4D'/><circle cx='22' cy='22' r='2' fill='#0A4D4D'/><circle cx='28' cy='22' r='2' fill='#0A4D4D'/><circle cx='34' cy='22' r='2' fill='#0A4D4D'/></g></svg>" } },
+        { "type": "benefit", "settings": { "title": "INTIMACY IS PRICELESS", "desc": "An affordable solution to regenerative health", "icon_svg": "<svg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='28' cy='28' r='28' fill='#D6B36A'/><g><circle cx='36' cy='22' r='3' fill='#0A4D4D'/><circle cx='28' cy='28' r='3' fill='#0A4D4D'/><path d='M22 36C22 32 28 32 28 32C28 32 34 32 34 36' stroke='#0A4D4D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g></svg>" } }
+      ]
+    }
+  ]
+}
 {% endschema %}
+
+<style>
+.as-seen-on-benefits-section {
+  border-radius: 28px;
+  overflow: hidden;
+  margin: 32px 0;
+  font-family: inherit;
+}
+.as-seen-on-bar {
+  background: #f7f7f7;
+  padding: 32px 24px 24px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.as-seen-on-label {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+}
+.as-seen-on-divider {
+  width: 2px;
+  height: 32px;
+  background: #0a4d4d;
+  margin: 0 16px;
+  display: inline-block;
+}
+.as-seen-on-logos {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.as-seen-on-logo img {
+  max-height: 32px;
+  width: auto;
+  display: block;
+  filter: grayscale(1) contrast(1.2);
+}
+.benefits-bar {
+  background: #0a4d4d;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  padding: 48px 16px 40px 16px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.benefit-item {
+  flex: 1 1 240px;
+  max-width: 340px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  margin: 0 8px;
+}
+.benefit-icon {
+  margin-bottom: 18px;
+  display: block;
+}
+.benefit-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+}
+.benefit-desc {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #e0e0e0;
+}
+@media (max-width: 900px) {
+  .benefits-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .benefit-item {
+    max-width: 100%;
+  }
+  .as-seen-on-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .as-seen-on-logos {
+    gap: 16px;
+  }
+}
+</style> 
