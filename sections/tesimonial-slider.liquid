@@ -97,6 +97,7 @@
   transition: transform 0.3s, opacity 0.3s;
   color: #222;
   z-index: 1;
+  display: none;
 }
 .testimonial-slide.active {
   background: #0a4d4d;
@@ -104,6 +105,9 @@
   opacity: 1;
   transform: scale(1.05);
   z-index: 2;
+}
+.testimonial-slide.visible {
+  display: block;
 }
 .slider-arrow {
   background: #fff;
@@ -149,48 +153,37 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  var track = document.querySelector('.testimonial-slider__track');
+  const track = document.querySelector('.testimonial-slider__track');
   if (!track) return;
-  var slides = Array.prototype.slice.call(track.children);
-  var prevBtn = document.querySelector('.slider-arrow--prev');
-  var nextBtn = document.querySelector('.slider-arrow--next');
-  var current = 1;
-
-  // Clone first and last slides for infinite loop
-  var firstClone = slides[0].cloneNode(true);
-  var lastClone = slides[slides.length - 1].cloneNode(true);
-  track.appendChild(firstClone);
-  track.insertBefore(lastClone, slides[0]);
-  var allSlides = Array.prototype.slice.call(track.children);
+  const slides = Array.from(track.children);
+  const prevBtn = document.querySelector('.slider-arrow--prev');
+  const nextBtn = document.querySelector('.slider-arrow--next');
+  let current = 0; // Center slide index
 
   function updateSlider() {
-    allSlides.forEach(function(slide) { slide.classList.remove('active'); });
-    allSlides[current].classList.add('active');
-    track.style.transform = 'translateX(-' + (current * 340) + 'px)';
+    slides.forEach((slide, idx) => {
+      slide.classList.remove('active', 'visible');
+      if (
+        idx === current ||
+        idx === (current - 1 + slides.length) % slides.length ||
+        idx === (current + 1) % slides.length
+      ) {
+        slide.classList.add('visible');
+      }
+      if (idx === current) {
+        slide.classList.add('active');
+      }
+    });
   }
 
   function nextSlide() {
-    if (current >= allSlides.length - 1) return;
-    current++;
+    current = (current + 1) % slides.length;
     updateSlider();
-    if (current === allSlides.length - 1) {
-      setTimeout(function() {
-        current = 1;
-        updateSlider();
-      }, 500);
-    }
   }
 
   function prevSlide() {
-    if (current <= 0) return;
-    current--;
+    current = (current - 1 + slides.length) % slides.length;
     updateSlider();
-    if (current === 0) {
-      setTimeout(function() {
-        current = allSlides.length - 2;
-        updateSlider();
-      }, 500);
-    }
   }
 
   nextBtn.addEventListener('click', nextSlide);
