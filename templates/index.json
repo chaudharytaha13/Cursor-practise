@@ -155,6 +155,84 @@
         "subheading": "While individual results may vary, many of our customers have experienced positive results every time!"
       }
     },
+    "as_so_on_benefits_eefXda": {
+      "type": "as-so-on-benefits",
+      "blocks": {
+        "logo_JRqamE": {
+          "type": "logo",
+          "settings": {
+            "alt": "Business Insider"
+          }
+        },
+        "logo_zb4XaY": {
+          "type": "logo",
+          "settings": {
+            "alt": "Fox"
+          }
+        },
+        "logo_Krhnka": {
+          "type": "logo",
+          "settings": {
+            "alt": "NBC News"
+          }
+        },
+        "logo_KG6YBf": {
+          "type": "logo",
+          "settings": {
+            "alt": "CBS"
+          }
+        },
+        "logo_Gw8Yyi": {
+          "type": "logo",
+          "settings": {
+            "alt": "StreetInsider.com"
+          }
+        },
+        "logo_yDktcK": {
+          "type": "logo",
+          "settings": {
+            "alt": "Newsmax"
+          }
+        },
+        "benefit_WUzgQB": {
+          "type": "benefit",
+          "settings": {
+            "icon_svg": "<svg width=\"56\" height=\"56\" viewbox=\"0 0 56 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"28\" cy=\"28\" r=\"28\" fill=\"#D6B36A\"></circle><path d=\"M36 22C36 22 33.5 16 28 16C22.5 16 20 22 20 22C20 22 20 34 28 34C36 34 36 22 36 22Z\" stroke=\"#0A4D4D\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "title": "NATURAL & SAFE",
+            "desc": "Carefully crafted with 100% natural botanicals"
+          }
+        },
+        "benefit_yjdPPE": {
+          "type": "benefit",
+          "settings": {
+            "icon_svg": "<svg width=\"56\" height=\"56\" viewbox=\"0 0 56 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"28\" cy=\"28\" r=\"28\" fill=\"#D6B36A\"></circle><g><rect x=\"18\" y=\"26\" width=\"20\" height=\"4\" fill=\"#0A4D4D\"></rect><rect x=\"18\" y=\"32\" width=\"20\" height=\"4\" fill=\"#0A4D4D\"></rect><circle cx=\"22\" cy=\"22\" r=\"2\" fill=\"#0A4D4D\"></circle><circle cx=\"28\" cy=\"22\" r=\"2\" fill=\"#0A4D4D\"></circle><circle cx=\"34\" cy=\"22\" r=\"2\" fill=\"#0A4D4D\"></circle></g></svg>",
+            "title": "MADE IN USA",
+            "desc": "Products made in USA in cGMP Compliant Facilities"
+          }
+        },
+        "benefit_yNzdGw": {
+          "type": "benefit",
+          "settings": {
+            "icon_svg": "<svg width=\"56\" height=\"56\" viewbox=\"0 0 56 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"28\" cy=\"28\" r=\"28\" fill=\"#D6B36A\"></circle><g><circle cx=\"36\" cy=\"22\" r=\"3\" fill=\"#0A4D4D\"></circle><circle cx=\"28\" cy=\"28\" r=\"3\" fill=\"#0A4D4D\"></circle><path d=\"M22 36C22 32 28 32 28 32C28 32 34 32 34 36\" stroke=\"#0A4D4D\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></g></svg>",
+            "title": "INTIMACY IS PRICELESS",
+            "desc": "An affordable solution to regenerative health"
+          }
+        }
+      },
+      "block_order": [
+        "logo_JRqamE",
+        "logo_zb4XaY",
+        "logo_Krhnka",
+        "logo_KG6YBf",
+        "logo_Gw8Yyi",
+        "logo_yDktcK",
+        "benefit_WUzgQB",
+        "benefit_yjdPPE",
+        "benefit_yNzdGw"
+      ],
+      "name": "As Seen On & Benefits",
+      "settings": {}
+    },
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
@@ -605,6 +683,7 @@
     "banner_hero_d6_cnjKHp",
     "icon_text_marquee_Lk6CGN",
     "tesimonial_slider_K99DpV",
+    "as_so_on_benefits_eefXda",
     "hero_jVaWmY",
     "product_list_qU3bEB",
     "before_after_d6_8qFb7P",
