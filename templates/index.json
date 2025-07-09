@@ -107,6 +107,14 @@
         "bg_color": "#06584d"
       }
     },
+    "tesimonial_slider_fqyQXH": {
+      "type": "tesimonial-slider",
+      "name": "Testimonial Slider",
+      "settings": {
+        "heading": "Join Over 8,000+ Men Unlocking Lasting Confidence",
+        "subheading": "While individual results may vary, many of our customers have experienced positive results every time!"
+      }
+    },
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
@@ -556,6 +564,7 @@
   "order": [
     "banner_hero_d6_cnjKHp",
     "icon_text_marquee_Lk6CGN",
+    "tesimonial_slider_fqyQXH",
     "hero_jVaWmY",
     "product_list_qU3bEB",
     "before_after_d6_8qFb7P",
