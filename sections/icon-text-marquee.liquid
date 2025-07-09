@@ -1,6 +1,114 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Icon Text Marquee",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Background Color", "default": "#06584d" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Icon + Text",
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icon" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Feature text" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Icon Text Marquee" } ]
+}
 {% endschema %}
+
+<section class="icon-text-marquee-section" style="background: {{ section.settings.bg_color }};">
+  <div class="icon-text-marquee-outer">
+    <div class="icon-text-marquee-inner" id="marquee-{{ section.id }}">
+      {% for block in section.blocks %}
+        <div class="icon-text-marquee-item">
+          {% if block.settings.icon != blank %}
+            <img src="{{ block.settings.icon | img_url: '48x48' }}" class="icon-text-marquee-icon" alt="" />
+          {% endif %}
+          <span class="icon-text-marquee-text">{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
+      <!-- {# Duplicate for seamless loop #} -->
+      {% for block in section.blocks %}
+        <div class="icon-text-marquee-item">
+          {% if block.settings.icon != blank %}
+            <img src="{{ block.settings.icon | img_url: '48x48' }}" class="icon-text-marquee-icon" alt="" />
+          {% endif %}
+          <span class="icon-text-marquee-text">{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <style>
+    .icon-text-marquee-section {
+      width: 100%;
+      overflow: hidden;
+      padding: 0;
+      min-height: 60px;
+      border: none;
+    }
+    .icon-text-marquee-outer {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+    .icon-text-marquee-inner {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      animation: marquee-scroll 24s linear infinite;
+    }
+    .icon-text-marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 36px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .icon-text-marquee-icon {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      filter: brightness(1.2) sepia(1) hue-rotate(-30deg) saturate(2) drop-shadow(0 1px 2px rgba(0,0,0,0.08));
+    }
+    @keyframes marquee-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (max-width: 700px) {
+      .icon-text-marquee-item {
+        font-size: 1rem;
+        margin: 0 16px;
+      }
+      .icon-text-marquee-outer {
+        height: 44px;
+      }
+      .icon-text-marquee-icon {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  </style>
+  <script>
+    (function() {
+      // Adjust animation duration based on content width
+      var marquee = document.getElementById('marquee-{{ section.id }}');
+      if (!marquee) return;
+      function setDuration() {
+        var totalWidth = marquee.scrollWidth / 2;
+        var duration = Math.max(12, totalWidth / 80); // seconds
+        marquee.style.animationDuration = duration + 's';
+      }
+      setDuration();
+      window.addEventListener('resize', setDuration);
+    })();
+  </script>
+</section> 
