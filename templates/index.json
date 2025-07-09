@@ -903,6 +903,19 @@
         "title": "FAQ",
         "description": "Below are some answers to common questions."
       }
+    },
+    "newsletter_promo_xGqwzp": {
+      "type": "newsletter-promo",
+      "name": "Newsletter Promo",
+      "settings": {
+        "left_image": "shopify://shop_images/Rectangle_21.webp",
+        "left_image_alt": "Newsletter Promo Image",
+        "heading": "Unlock",
+        "highlight": "10% OFF!",
+        "heading_after": "",
+        "subheading": "Join over 20,000+ members getting access to Performance Techniques, Tips & Tricks to supercharge your S/X life.",
+        "button_text": "Sign Up"
+      }
     }
   },
   "order": [
@@ -916,6 +929,7 @@
     "product_list_qU3bEB",
     "before_after_d6_8qFb7P",
     "feature_highlight_d6_gcx9EH",
-    "faq_sec_d6_mmCTHz"
+    "faq_sec_d6_mmCTHz",
+    "newsletter_promo_xGqwzp"
   ]
 }
