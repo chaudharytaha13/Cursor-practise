@@ -107,84 +107,6 @@
         "bg_color": "#06584d"
       }
     },
-    "tesimonial_slider_fqyQXH": {
-      "type": "tesimonial-slider",
-      "blocks": {
-        "testimonial_3zNEEg": {
-          "type": "testimonial",
-          "settings": {
-            "stars": "5",
-            "title": "Better Focus",
-            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
-            "name": "Eleri S.",
-            "badge": "Verified Buyer"
-          }
-        },
-        "testimonial_87Wzkc": {
-          "type": "testimonial",
-          "settings": {
-            "stars": "5",
-            "title": "Better Focus",
-            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
-            "name": "Eleri S.",
-            "badge": "Verified Buyer"
-          }
-        },
-        "testimonial_Tc9MCx": {
-          "type": "testimonial",
-          "settings": {
-            "stars": "5",
-            "title": "Better Focus",
-            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
-            "name": "Eleri S.",
-            "badge": "Verified Buyer"
-          }
-        },
-        "testimonial_wGQY7q": {
-          "type": "testimonial",
-          "settings": {
-            "stars": "5",
-            "title": "Better Focus",
-            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
-            "name": "Eleri S.",
-            "badge": "Verified Buyer"
-          }
-        },
-        "testimonial_q6dEf8": {
-          "type": "testimonial",
-          "settings": {
-            "stars": "5",
-            "title": "Better Focus",
-            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
-            "name": "Eleri S.",
-            "badge": "Verified Buyer"
-          }
-        },
-        "testimonial_MHgnJM": {
-          "type": "testimonial",
-          "settings": {
-            "stars": "5",
-            "title": "Better Focus",
-            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
-            "name": "Eleri S.",
-            "badge": "Verified Buyer"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_3zNEEg",
-        "testimonial_87Wzkc",
-        "testimonial_Tc9MCx",
-        "testimonial_wGQY7q",
-        "testimonial_q6dEf8",
-        "testimonial_MHgnJM"
-      ],
-      "name": "Testimonial Slider",
-      "settings": {
-        "heading": "Join Over 8,000+ Men Unlocking Lasting Confidence",
-        "subheading": "While individual results may vary, many of our customers have experienced positive results every time!"
-      }
-    },
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
@@ -634,7 +556,6 @@
   "order": [
     "banner_hero_d6_cnjKHp",
     "icon_text_marquee_Lk6CGN",
-    "tesimonial_slider_fqyQXH",
     "hero_jVaWmY",
     "product_list_qU3bEB",
     "before_after_d6_8qFb7P",
