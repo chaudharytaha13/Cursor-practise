@@ -177,7 +177,7 @@
         "benefit_WUzgQB": {
           "type": "benefit",
           "settings": {
-            "icon_svg": "",
+            "icon-svg": "shopify://shop_images/Group_3338.svg",
             "title": "NATURAL & SAFE",
             "desc": "Carefully crafted with 100% natural botanicals"
           }
@@ -185,7 +185,7 @@
         "benefit_yjdPPE": {
           "type": "benefit",
           "settings": {
-            "icon_svg": "<svg width=\"56\" height=\"56\" viewbox=\"0 0 56 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"28\" cy=\"28\" r=\"28\" fill=\"#D6B36A\"></circle><g><rect x=\"18\" y=\"26\" width=\"20\" height=\"4\" fill=\"#0A4D4D\"></rect><rect x=\"18\" y=\"32\" width=\"20\" height=\"4\" fill=\"#0A4D4D\"></rect><circle cx=\"22\" cy=\"22\" r=\"2\" fill=\"#0A4D4D\"></circle><circle cx=\"28\" cy=\"22\" r=\"2\" fill=\"#0A4D4D\"></circle><circle cx=\"34\" cy=\"22\" r=\"2\" fill=\"#0A4D4D\"></circle></g></svg>",
+            "icon-svg": "shopify://shop_images/Group_3340.svg",
             "title": "MADE IN USA",
             "desc": "Products made in USA in cGMP Compliant Facilities"
           }
@@ -193,7 +193,7 @@
         "benefit_yNzdGw": {
           "type": "benefit",
           "settings": {
-            "icon_svg": "<svg width=\"56\" height=\"56\" viewbox=\"0 0 56 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"28\" cy=\"28\" r=\"28\" fill=\"#D6B36A\"></circle><g><circle cx=\"36\" cy=\"22\" r=\"3\" fill=\"#0A4D4D\"></circle><circle cx=\"28\" cy=\"28\" r=\"3\" fill=\"#0A4D4D\"></circle><path d=\"M22 36C22 32 28 32 28 32C28 32 34 32 34 36\" stroke=\"#0A4D4D\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></g></svg>",
+            "icon-svg": "shopify://shop_images/Group_3342.svg",
             "title": "INTIMACY IS PRICELESS",
             "desc": "An affordable solution to regenerative health"
           }
