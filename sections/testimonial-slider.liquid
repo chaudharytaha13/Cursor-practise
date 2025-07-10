@@ -1,0 +1,251 @@
+{% comment %}
+  Testimonial Slider Section (centered, 3 visible, center highlighted)
+{% endcomment %}
+<section class="testimonial-slider-section">
+  <div class="testimonial-slider-header">
+    <h2 class="testimonial-slider-heading">{{ section.settings.heading }}</h2>
+    <div class="testimonial-slider-subheading">{{ section.settings.subheading }}</div>
+  </div>
+  <div class="testimonial-slider-main">
+    <button class="slider-arrow slider-arrow--prev" aria-label="Previous">&#8592;</button>
+    <div class="testimonial-slider-track">
+      {% for block in section.blocks %}
+        <div class="testimonial-slide">
+          <div class="testimonial-stars">
+            {% for i in (1..5) %}
+              <span class="star">&#9733;</span>
+            {% endfor %}
+          </div>
+          <div class="testimonial-title">{{ block.settings.title }}</div>
+          <div class="testimonial-text">{{ block.settings.text }}</div>
+          <div class="testimonial-author">
+            <span class="testimonial-author-name">{{ block.settings.author }}</span><br>
+            <span class="testimonial-verified">&#10003; Verified Buyer</span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <button class="slider-arrow slider-arrow--next" aria-label="Next">&#8594;</button>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonial Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Join Over 8,000+ Men Unlocking Lasting Confidence"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "While individual results may vary, many of our customers have experienced positive results every time!"
+    }
+  ],
+  "max_blocks": 10,
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Everyday Performance Lift"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Testimonial Text",
+          "default": "I've definitely noticed improved performance and less fatigue. Everwood is now part of my daily routine."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Caleb L."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial Slider",
+      "blocks": [
+        { "type": "testimonial", "settings": { "title": "Im Lasting Longer!!", "text": "I notice my body feels stronger, my energy is smoother, and I’m mentally dialed in all day. This supplement changed my entire life and I won’t ever stop taking It!!!!", "author": "Mason B." } },
+        { "type": "testimonial", "settings": { "title": "Everyday Performance Lift", "text": "I've definitely noticed improved performance and less fatigue. Everwood is now part of my daily routine.", "author": "Caleb L." } },
+        { "type": "testimonial", "settings": { "title": "Better Focus", "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.", "author": "Eleri S." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.testimonial-slider-section {
+  margin: 48px 0 32px 0;
+  font-family: inherit;
+}
+.testimonial-slider-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+.testimonial-slider-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111;
+}
+.testimonial-slider-subheading {
+  font-size: 1.1rem;
+  color: #444;
+  font-weight: 500;
+}
+.testimonial-slider-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.slider-arrow {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  color: #0a4d4d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 12px;
+  transition: background 0.2s;
+}
+.slider-arrow:focus {
+  outline: 2px solid #0a4d4d;
+}
+.testimonial-slider-track {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 32px;
+  width: 820px;
+  overflow: hidden;
+  position: relative;
+}
+.testimonial-slide {
+  min-width: 280px;
+  max-width: 320px;
+  background: #a3c2be;
+  border-radius: 18px;
+  padding: 38px 24px 32px 24px;
+  text-align: center;
+  opacity: 0.6;
+  transform: scale(0.92);
+  transition: transform 0.4s, opacity 0.4s, background 0.4s, color 0.4s;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.testimonial-slide.active {
+  background: #0a4d4d;
+  color: #fff;
+  opacity: 1;
+  transform: scale(1.05);
+  z-index: 2;
+}
+.testimonial-stars {
+  font-size: 1.5rem;
+  color: #ffe599;
+  margin-bottom: 18px;
+  letter-spacing: 0.12em;
+}
+.testimonial-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.testimonial-text {
+  font-size: 1.05rem;
+  margin-bottom: 22px;
+  color: #fff;
+}
+.testimonial-author {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: auto;
+  color: #fff;
+}
+.testimonial-verified {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: #e0e0e0;
+  display: inline-block;
+  margin-top: 2px;
+}
+@media (max-width: 1000px) {
+  .testimonial-slider-track {
+    width: 100vw;
+    gap: 12px;
+  }
+  .testimonial-slide {
+    min-width: 80vw;
+    max-width: 90vw;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.querySelector('.testimonial-slider-track');
+  if (!track) return;
+  const slides = Array.from(track.children);
+  const prevBtn = document.querySelector('.slider-arrow--prev');
+  const nextBtn = document.querySelector('.slider-arrow--next');
+  let current = 1; // Center slide index
+
+  function updateSlider() {
+    slides.forEach((slide, idx) => {
+      slide.classList.remove('active');
+      slide.style.display = 'none';
+      if (
+        idx === current ||
+        idx === (current - 1 + slides.length) % slides.length ||
+        idx === (current + 1) % slides.length
+      ) {
+        slide.style.display = 'flex';
+      }
+      if (idx === current) {
+        slide.classList.add('active');
+      }
+    });
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    updateSlider();
+  }
+
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    updateSlider();
+  }
+
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  // Initialize
+  updateSlider();
+});
+</script> 
