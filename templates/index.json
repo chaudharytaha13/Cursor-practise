@@ -167,45 +167,10 @@
     "as_so_on_benefits_eefXda": {
       "type": "as-so-on-benefits",
       "blocks": {
-        "logo_JRqamE": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Ellipse_8_50x_0d6d4cbe-531b-4667-b002-021a51d474fb.webp",
-            "alt": "Business Insider"
-          }
-        },
-        "logo_zb4XaY": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Ellipse_8-6_50x_0f397d14-8509-4c57-9f73-b14a0931b882.webp",
-            "alt": "Fox"
-          }
-        },
-        "logo_Krhnka": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Ellipse_8-5_50x_2a5555de-63d8-4b28-adf0-24fac54fe8bf.webp",
-            "alt": "NBC News"
-          }
-        },
-        "logo_KG6YBf": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Ellipse_8-1_50x_8203b803-68d6-4803-bc21-e8aa246d94a8.webp",
-            "alt": "CBS"
-          }
-        },
-        "logo_Gw8Yyi": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Ellipse_8-2_50x_9986234f-8176-4bf9-99ea-8272ab1f439e.webp",
-            "alt": "StreetInsider.com"
-          }
-        },
         "logo_yDktcK": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/Ellipse_8-3_50x_f912f637-329f-4fe0-bfa7-8d02b9feb546.webp",
+            "logo": "shopify://shop_images/Frame_1686552869.avif",
             "alt": "Newsmax"
           }
         },
@@ -235,11 +200,6 @@
         }
       },
       "block_order": [
-        "logo_JRqamE",
-        "logo_zb4XaY",
-        "logo_Krhnka",
-        "logo_KG6YBf",
-        "logo_Gw8Yyi",
         "logo_yDktcK",
         "benefit_WUzgQB",
         "benefit_yjdPPE",
