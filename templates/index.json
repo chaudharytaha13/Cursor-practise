@@ -107,47 +107,56 @@
         "bg_color": "#06584d"
       }
     },
-    "tesimonial_slider_K99DpV": {
-      "type": "tesimonial-slider",
+    "testimonial_slider_qBkKnc": {
+      "type": "testimonial-slider",
       "blocks": {
-        "testimonial_zxb6Hx": {
+        "testimonial_ppiwCx": {
           "type": "testimonial",
           "settings": {
-            "title": "Better Focus",
-            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
-            "name": "Caleb L."
+            "title": "Im Lasting Longer!!",
+            "text": "I notice my body feels stronger, my energy is smoother, and I’m mentally dialed in all day. This supplement changed my entire life and I won’t ever stop taking It!!!!",
+            "author": "Mason B."
           }
         },
-        "testimonial_eAeYN6": {
-          "type": "testimonial",
-          "settings": {
-            "title": "Better Focus",
-            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
-            "name": "Caleb L."
-          }
-        },
-        "testimonial_wfpkGK": {
-          "type": "testimonial",
-          "settings": {
-            "title": "Better Focus",
-            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
-            "name": "Caleb L."
-          }
-        },
-        "testimonial_FXeKq4": {
+        "testimonial_9M6cKC": {
           "type": "testimonial",
           "settings": {
             "title": "Everyday Performance Lift",
             "text": "I've definitely noticed improved performance and less fatigue. Everwood is now part of my daily routine.",
-            "name": "Caleb L."
+            "author": "Caleb L."
+          }
+        },
+        "testimonial_JkCiw6": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Better Focus",
+            "text": "My productivity at work has skyrocketed since I started using Everwood. It helps me stay sharp all day.",
+            "author": "Eleri S."
+          }
+        },
+        "testimonial_6bKHbU": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Everyday Performance Lift",
+            "text": "I've definitely noticed improved performance and less fatigue. Everwood is now part of my daily routine.",
+            "author": "Caleb L."
+          }
+        },
+        "testimonial_dT9DG3": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Everyday Performance Lift",
+            "text": "I've definitely noticed improved performance and less fatigue. Everwood is now part of my daily routine.",
+            "author": "Caleb L."
           }
         }
       },
       "block_order": [
-        "testimonial_zxb6Hx",
-        "testimonial_eAeYN6",
-        "testimonial_wfpkGK",
-        "testimonial_FXeKq4"
+        "testimonial_ppiwCx",
+        "testimonial_9M6cKC",
+        "testimonial_JkCiw6",
+        "testimonial_6bKHbU",
+        "testimonial_dT9DG3"
       ],
       "name": "Testimonial Slider",
       "settings": {
@@ -921,7 +930,7 @@
   "order": [
     "banner_hero_d6_cnjKHp",
     "icon_text_marquee_Lk6CGN",
-    "tesimonial_slider_K99DpV",
+    "testimonial_slider_qBkKnc",
     "as_so_on_benefits_eefXda",
     "superior_daily_vitality_8hQtjy",
     "compare_suppliments_PcmztN",
