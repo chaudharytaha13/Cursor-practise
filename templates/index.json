@@ -177,7 +177,7 @@
         "benefit_WUzgQB": {
           "type": "benefit",
           "settings": {
-            "icon_svg": "<svg width=\"56\" height=\"56\" viewbox=\"0 0 56 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"28\" cy=\"28\" r=\"28\" fill=\"#D6B36A\"></circle><path d=\"M36 22C36 22 33.5 16 28 16C22.5 16 20 22 20 22C20 22 20 34 28 34C36 34 36 22 36 22Z\" stroke=\"#0A4D4D\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+            "icon_svg": "",
             "title": "NATURAL & SAFE",
             "desc": "Carefully crafted with 100% natural botanicals"
           }
