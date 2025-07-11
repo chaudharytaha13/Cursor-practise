@@ -232,7 +232,7 @@
         "ingredient_Qw8GFh": {
           "type": "ingredient",
           "settings": {
-            "image": "shopify://shop_images/Group_7.png",
+            "image": "shopify://shop_images/Rectangle_9012_6.avif",
             "title": "Grapefruit Extract",
             "desc": "Provides antioxidants and nutrients like fiber and potassium to support immune and digestive health.",
             "bg_color": "#fff3d9"
@@ -241,6 +241,7 @@
         "ingredient_6kARDg": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_9012_2.avif",
             "title": "Yohimbine",
             "desc": "Traditionally used to support circulation and enhance physical performance.",
             "bg_color": "#ffe7d9"
@@ -249,6 +250,7 @@
         "ingredient_6ymVeY": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_9012_4.avif",
             "title": "Cat's Claw Extract",
             "desc": "Helps support energy levels, circulation, and physical performance, including intimate vitality.",
             "bg_color": "#ffe7d9"
@@ -257,6 +259,7 @@
         "ingredient_NdGbXp": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_9012_5.avif",
             "title": "Ginseng Root",
             "desc": "Helps support energy levels, circulation, and physical performance, including intimate vitality.",
             "bg_color": "#e6f7d9"
