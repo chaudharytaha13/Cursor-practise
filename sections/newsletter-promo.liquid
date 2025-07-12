@@ -19,21 +19,23 @@
         {{ section.settings.heading_after }}
       </h2>
       <div class="newsletter-promo-subheading">{{ section.settings.subheading }}</div>
-      <form method="post" action="/contact#newsletter-promo" accept-charset="UTF-8" class="newsletter-promo-form">
-        <input type="hidden" name="form_type" value="customer">
-        <input type="hidden" name="utf8" value="✓">
-        <input
-          type="email"
-          name="contact[email]"
-          class="newsletter-promo-input"
-          placeholder="Your E-mail Here"
-          required
-        >
-        <button type="submit" class="newsletter-promo-btn">
-          {{ section.settings.button_text }}
-          <span class="newsletter-promo-btn-arrow">→</span>
-        </button>
-      </form>
+      <div class="newsletter-promo-subheading">
+        <form method="post" action="/contact#newsletter-promo" accept-charset="UTF-8" class="newsletter-promo-form">
+          <input type="hidden" name="form_type" value="customer">
+          <input type="hidden" name="utf8" value="✓">
+          <input
+            type="email"
+            name="contact[email]"
+            class="newsletter-promo-input"
+            placeholder="Your E-mail Here"
+            required
+          >
+          <button type="submit" class="newsletter-promo-btn">
+            {{ section.settings.button_text }}
+            <span class="newsletter-promo-btn-arrow">→</span>
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 </section>
