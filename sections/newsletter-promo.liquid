@@ -21,17 +21,15 @@
       <div class="newsletter-promo-subheading">{{ section.settings.subheading }}</div>
       <div class="newsletter-promo-form-section">
         <form method="post" action="/contact#newsletter-promo" accept-charset="UTF-8" class="newsletter-promo-form">
-          <div class="newsletter-promo-inputs">
-            <input type="hidden" name="form_type" value="customer">
-            <input type="hidden" name="utf8" value="✓">
-            <input
-              type="email"
-              name="contact[email]"
-              class="newsletter-promo-input"
-              placeholder="Your E-mail Here"
-              required
-            >
-          </div>
+          <input type="hidden" name="form_type" value="customer">
+          <input type="hidden" name="utf8" value="✓">
+          <input
+            type="email"
+            name="contact[email]"
+            class="newsletter-promo-input"
+            placeholder="Your E-mail Here"
+            required
+          >
           <button type="submit" class="newsletter-promo-btn">
             {{ section.settings.button_text }}
             <span class="newsletter-promo-btn-arrow">→</span>
