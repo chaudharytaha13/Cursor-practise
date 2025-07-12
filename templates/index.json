@@ -784,9 +784,9 @@
         "feature_nz89tT": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Ellipse_8-3_50x_f912f637-329f-4fe0-bfa7-8d02b9feb546.webp",
-            "title": "Feature Title",
-            "description": "Feature description goes here.",
+            "icon": "shopify://shop_images/watch.svg",
+            "title": "Encourages Long Sessions",
+            "description": "Supports longer-lasting intimate experiences without the crash or overstimulation of synthetic enhancers",
             "side": "left"
           }
         },
