@@ -775,9 +775,9 @@
         "feature_egygtj": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Ellipse_8-2_50x_9986234f-8176-4bf9-99ea-8272ab1f439e.webp",
-            "title": "Feature Title",
-            "description": "Feature description goes here.",
+            "icon": "shopify://shop_images/Union_1_e814d134-1799-4297-ad51-655d82060f4a.svg",
+            "title": "Promotes Blood Flow",
+            "description": "Contains botanicals traditionally used to support smooth blood flow, helping to sustain vascular wellness and overall male health",
             "side": "left"
           }
         },
