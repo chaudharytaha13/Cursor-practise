@@ -793,9 +793,9 @@
         "feature_qwwJj3": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Ellipse_8-4_50x_e10c640a-28d3-44e4-a07a-e18f6006b5f6.webp",
-            "title": "Feature Title",
-            "description": "Feature description goes here.",
+            "icon": "shopify://shop_images/lightening.svg",
+            "title": "Sustained Male Vitality",
+            "description": "Formulated with carefully selected herbs that promote natural energy, resilience, and overall vitality in daily life",
             "side": "right"
           }
         },
