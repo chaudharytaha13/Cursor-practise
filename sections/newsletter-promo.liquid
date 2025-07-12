@@ -201,12 +201,16 @@
     transition: background 0.2s;
     height: 100%;
   }
-
-  .newsletter-promo-btn-arrow {
+  .newsletter-promo-btn:hover .newsletter-promo-btn-arrow{
+      transform: translate(10px);
+  }
+   .newsletter-promo-btn-arrow {
     font-size: 1.2em;
     margin-left: 2px;
-        fill: #d2b06d;
-
+    transition: all .4s;
+  }
+  .newsletter-promo-btn-arrow path{
+    fill: #d2b06d;
   }
   @media (max-width: 900px) {
     .newsletter-promo-container {
