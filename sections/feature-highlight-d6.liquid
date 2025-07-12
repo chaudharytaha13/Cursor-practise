@@ -107,10 +107,12 @@
         {% for block in section.blocks %}
           {% if block.settings.side == 'right' %}
             <div class="feature-block">
-              {% if block.settings.icon != blank %}
-                <img src="{{ block.settings.icon | img_url: '64x64' }}" class="feature-icon" alt="">
-              {% endif %}
-              <div class="feature-title">{{ block.settings.title }}</div>
+              <div class="feature-highlight-image-text">
+                {% if block.settings.icon != blank %}
+                  <img src="{{ block.settings.icon | img_url: '64x64' }}" class="feature-icon" alt="">
+                {% endif %}
+                <div class="feature-title">{{ block.settings.title }}</div>
+              </div>
               <div class="feature-desc">{{ block.settings.description }}</div>
               <div class="arrow arrow-left"></div>
             </div>
