@@ -12,7 +12,10 @@
     {% for block in section.blocks %}
       <div class="faq-item" data-index="{{ forloop.index0 }}">
         <button class="faq-question" aria-expanded="false">
-          <span class="faq-qnum">{{ forloop.index }} &#8226;</span> {{ block.settings.question }}
+          <div>
+            <span class="faq-qnum">{{ forloop.index }} &#8226;</span> {{ block.settings.question }}
+          </div>
+          
           <span class="faq-toggle">+</span>
         </button>
         <div class="faq-answer">{{ block.settings.answer }}</div>
