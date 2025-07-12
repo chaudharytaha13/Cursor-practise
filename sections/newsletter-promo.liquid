@@ -19,7 +19,7 @@
         {{ section.settings.heading_after }}
       </h2>
       <div class="newsletter-promo-subheading">{{ section.settings.subheading }}</div>
-      <div class="newsletter-promo-subheading">
+      <div class="newsletter-promo-form-section">
         <form method="post" action="/contact#newsletter-promo" accept-charset="UTF-8" class="newsletter-promo-form">
           <input type="hidden" name="form_type" value="customer">
           <input type="hidden" name="utf8" value="✓">
@@ -146,6 +146,9 @@
   .newsletter-promo-subheading {
     font-size: 16px;
     font-weight: 500;
+  }
+  .newsletter-promo-form-section{
+    padding: 32px;
   }
   .newsletter-promo-form {
     display: flex;
